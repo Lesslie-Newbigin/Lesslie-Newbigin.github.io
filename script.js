@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const homeLink = document.getElementById("home-link");
   if (homeLink) {
-    homeLink.addEventListener("click", () => {
+    homeLink.addEventListener("Click", () => {
       location.reload();
     });
   }
