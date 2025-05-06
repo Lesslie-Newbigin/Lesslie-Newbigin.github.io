@@ -1,35 +1,38 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tech Teach Hi - Lesslie Newbigin</title>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
-    <div class="logo">Tech Teach Hi</div>
-    <div class="menu">
-      <a onclick="location.reload()">Home</a>
-      <a onclick="signUp()">Sign Up</a>
-      <a onclick="myAccount()">My Account</a>
-      <a onclick="addUser()">Add New User</a>
-      <a onclick="adminLogin()">Admin Login</a>
-      <a onclick="contactUs()">Contact Us</a>
+    <div class="logo" id="home-link">Tech Teach Hi</div>
+    <nav class="menu">
+      <a href="#" onclick="signUp()">Sign Up</a>
+      <a href="#" onclick="myAccount()">My Account</a>
+      <a href="#" onclick="addUser()">Add New User</a>
+      <a href="#" onclick="adminLogin()">Admin Login</a>
+      <a href="#" onclick="contactUs()">Contact Us</a>
+    </nav>
+    <div class="search-container">
+      <input type="text" class="search-bar" placeholder="Search...">
     </div>
-    <input type="text" class="search-bar" placeholder="Search...">
   </header>
+
   <div class="top-left">
     <div class="hex-account" id="accountHex">?</div>
     <button class="add-btn" onclick="addProject()">+</button>
-    <button class="mode-toggle" onclick="toggleMode()">Toggle Mode</button>
+    <button id="toggle-mode" class="mode-toggle">Toggle Mode</button>
   </div>
-  <div class="scroll-bar"></div>
-  <main>
-    <h1>Welcome to Teach Tech hi</h1>
+
+  <main id="main">
+    <h1>Welcome to Tech Teach Hi</h1>
     <p>Powered by Lesslie Newbigin | Cybersecurity Analyst</p>
     <p>Explore, Learn, Secure — Join the hacker-inspired movement.</p>
   </main>
-  <script src="script.js"></script>
 </body>
 </html>
