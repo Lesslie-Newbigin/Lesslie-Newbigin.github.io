@@ -1,92 +1,58 @@
 body {
   margin: 0;
-  padding: 0;
-  background: #0b0f10;
-  font-family: 'Share Tech Mono', monospace;
-  color: #00ff99;
+  font-family: 'Georgia', serif;
+  background-color: #1b2d1b;
+  color: #e0e0c0;
 }
 
-main {
-  width: 90%;
-  max-width: 900px;
-  margin: auto;
-  padding-top: 60px;
-}
-
-.signup-box, .homepage, .admin-box {
-  background-color: #0e1214;
+.military-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #2c3e2c;
+  width: 200px;
+  height: 100vh;
   padding: 20px;
-  border: 1px solid #00ff99;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #00ff99;
-  margin-bottom: 20px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.5);
 }
 
-input {
-  background-color: #0d0d0d;
-  border: 1px solid #00ff99;
-  padding: 10px;
-  color: #00ff99;
-  font-size: 16px;
-  border-radius: 5px;
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
+.military-menu h1 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #cceecc;
 }
 
-button {
-  background-color: #00ff99;
-  color: #000;
-  padding: 10px;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-header h1 {
-  font-size: 2em;
-  margin-bottom: 0;
-}
-
-header p {
-  font-size: 1em;
-  color: #ccc;
-}
-
-.videos {
-  margin-top: 20px;
-}
-
-.video-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-}
-
-video {
-  width: 100%;
-  border: 2px solid #00ff99;
-  border-radius: 5px;
-}
-
-.skills ul {
+.military-menu ul {
   list-style: none;
   padding-left: 0;
 }
 
-.skills li {
-  background: #111;
-  border-left: 4px solid #00ff99;
-  padding: 10px;
-  margin: 5px 0;
+.military-menu li {
+  margin: 15px 0;
+  cursor: pointer;
+  font-weight: bold;
+  color: #aaffaa;
 }
 
-#secretBtn {
-  position: fixed;
-  top: 10px;
-  right: 15px;
-  color: #00ff99;
-  font-size: 22px;
-  cursor: pointer;
+main {
+  margin-left: 220px;
+  padding: 20px;
+}
+
+.page-section {
+  display: none;
+}
+
+.page-section.active {
+  display: block;
+}
+
+input[type="file"], button {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #445544;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
 }
