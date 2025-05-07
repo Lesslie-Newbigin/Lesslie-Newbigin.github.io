@@ -2,7 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hacker Control Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hacker SignUp Panel</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="secretBtn">•</div>
+
+  <main>
+    <section class="signup-box" id="signupBox">
+      <h1>Create Account</h1>
+      <input type="text" id="newUsername" placeholder="Username" />
+      <input type="email" id="newEmail" placeholder="Email" />
+      <input type="password" id="newPassword" placeholder="Password" />
+      <button onclick="register()">Sign Up</button>
+      <p id="signupMsg"></p>
+    </section>
+
+    <section class="welcome-box" id="welcomeBox" style="display: none;">
+      <h2>Welcome back, <span id="welcomeUser"></span></h2>
+      <p>[INFO] You are already registered.</p>
+    </section>
+
+    <section class="admin-box" id="adminPanel" style="display: none;">
+      <h2>ADMIN PANEL</h2>
+      <div id="userLog"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
