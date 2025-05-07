@@ -1,6 +1,6 @@
 let clickCount = 0;
 
-// Load existing user if available
+// Load existing user if
 window.onload = () => {
   const user = JSON.parse(localStorage.getItem("userData"));
   if (user) {
