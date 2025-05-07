@@ -1,32 +1,96 @@
-/* style.css */
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-body { margin: 0; font-family: 'Arial', sans-serif; background: url(images.jpeg) no-repeat center center fixed; background-size: cover; color: white; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
 
-nav { background-color: rgba(0, 0, 0, 0.9); padding: 10px; display: flex; align-items: center; }
+.container {
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+}
 
-.menu-toggle { font-size: 24px; cursor: pointer; color: yellow; margin-right: 20px; }
+/* Navbar styles */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+}
 
-.nav-links { list-style: none; display: flex; gap: 20px; }
+.navbar .logo {
+  float: left;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
 
-.nav-links li a { color: cyan; text-decoration: none; font-weight: bold; }
+.navbar nav {
+  float: right;
+  margin-right: 1rem;
+}
 
-.nav-links li a:hover { color: red; }
+.navbar .nav-links {
+  list-style: none;
+}
 
-.dashboard main { padding: 2rem; background-color: rgba(0, 0, 0, 0.75); margin: 1rem; border-radius: 10px; }
+.navbar .nav-links li {
+  display: inline;
+  margin: 0 1rem;
+}
 
-.welcome h1 { color: yellow; font-size: 2.5rem; }
+.navbar .nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
 
-.welcome p { color: lightblue; font-size: 1.2rem; }
+/* Hero section */
+.hero {
+  background: url('background.jpg') no-repeat center center/cover;
+  color: #fff;
+  padding: 4rem 0;
+  text-align: center;
+}
 
-.actions h2 { color: orange; margin-top: 1rem; }
+/* Profile section */
+.profile-section {
+  padding: 2rem 0;
+  background-color: #e2e2e2;
+}
 
-input[type="file"] { margin: 10px 0; }
+/* Upload section */
+.upload-section {
+  padding: 2rem 0;
+}
 
-button { background-color: red; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+.upload-section input[type="file"] {
+  margin-right: 1rem;
+}
 
-button:hover { background-color: darkred; }
+.upload-section button {
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
 
-#uploadStatus { margin-top: 10px; color: lime; font-weight: bold; }
+.upload-section #uploadStatus {
+  margin-top: 1rem;
+  color: green;
+}
 
-#secretInfo { border: 2px dashed red; padding: 1rem; margin-top: 2rem; background-color: rgba(20, 20, 20, 0.9); color: yellow; }
-
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
