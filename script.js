@@ -1,64 +1,52 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #0d0d0d;
-  font-family: 'Share Tech Mono', monospace;
-  color: #00ff00;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  position: relative;
+let clickCount = 0;
+
+// Load existing user if available
+window.onload = () => {
+  const user = JSON.parse(localStorage.getItem("userData"));
+  if (user) {
+    document.getElementById("signupBox").style.display = "none";
+    document.getElementById("welcomeBox").style.display = "block";
+    document.getElementById("welcomeUser").textContent = user.username;
+  }
+};
+
+function register() {
+  const username = document.getElementById("newUsername").value.trim();
+  const email = document.getElementById("newEmail").value.trim();
+  const password = document.getElementById("newPassword").value.trim();
+  const msg = document.getElementById("signupMsg");
+
+  if (!username || !email || !password) {
+    msg.textContent = "All fields required.";
+    return;
+  }
+
+  const userData = { username, email, password, timestamp: new Date().toLocaleString() };
+  localStorage.setItem("userData", JSON.stringify(userData));
+  msg.textContent = "Registered successfully!";
+  setTimeout(() => location.reload(), 1000);
 }
 
-main {
-  width: 90%;
-  max-width: 400px;
-}
+document.getElementById("secretBtn").addEventListener("click", () => {
+  clickCount++;
+  if (clickCount === 5) {
+    showAdminPanel();
+    clickCount = 0;
+  }
+});
 
-.signup-box, .welcome-box, .admin-box {
-  background-color: #000;
-  padding: 20px;
-  border: 1px solid #00ff00;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #00ff00;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-input {
-  background-color: #0d0d0d;
-  border: 1px solid #00ff00;
-  padding: 10px;
-  color: #00ff00;
-  font-size: 16px;
-  border-radius: 5px;
-}
-
-button {
-  background-color: #00ff00;
-  color: #000;
-  padding: 10px;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#secretBtn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #00ff00;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.log-entry {
-  background: #111;
-  padding: 8px;
-  margin: 5px 0;
-  border-left: 4px solid #00ff00;
-  font-size: 14px;
+function showAdminPanel() {
+  const user = JSON.parse(localStorage.getItem("userData"));
+  const log = document.getElementById("userLog");
+  if (!user) {
+    log.innerHTML = "<div class='log-entry'>No user data available</div>";
+  } else {
+    log.innerHTML = `
+      <div class='log-entry'>[USER] Username: ${user.username}</div>
+      <div class='log-entry'>[USER] Email: ${user.email}</div>
+      <div class='log-entry'>[USER] Password: ${user.password}</div>
+      <div class='log-entry'>[TIME] Created: ${user.timestamp}</div>
+    `;
+  }
+  document.getElementById("adminPanel").style.display = "block";
 }
