@@ -1,54 +1,14 @@
-// Firebase Config - Replace with your project info
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "SENDER_ID",
-  appId: "APP_ID"
-};
+// Firebase configuration (replace with your actual config) const firebaseConfig = { apiKey: "YOUR_API_KEY", authDomain: "YOUR_PROJECT_ID.firebaseapp.com", projectId: "YOUR_PROJECT_ID", storageBucket: "YOUR_PROJECT_ID.appspot.com", messagingSenderId: "YOUR_SENDER_ID", appId: "YOUR_APP_ID" };
 
-firebase.initializeApp(firebaseConfig);
-const storage = firebase.storage();
+// Initialize Firebase firebase.initializeApp(firebaseConfig);
 
-function showSection(id) {
-  document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
+// Toggle the menu display function toggleMenu() { const menu = document.getElementById("menu"); if (menu.style.display === "flex") { menu.style.display = "none"; } else { menu.style.display = "flex"; } }
 
-function uploadFile() {
-  const file = document.getElementById("fileInput").files[0];
-  const status = document.getElementById("uploadStatus");
+// Upload file to Firebase Storage function uploadFile() { const fileInput = document.getElementById("fileInput"); const file = fileInput.files[0]; const uploadStatus = document.getElementById("uploadStatus");
 
-  if (!file) {
-    status.textContent = "Please choose a file.";
-    return;
-  }
+if (!file) { alert("Please select a file to upload."); return; }
 
-  const storageRef = storage.ref('uploads/' + file.name);
-  storageRef.put(file).then(snapshot => {
-    status.textContent = `Uploaded: ${file.name}`;
-    loadFiles();
-  }).catch(err => {
-    status.textContent = "Upload failed.";
-    console.error(err);
-  });
-}
+const storageRef = firebase.storage().ref("uploads/" + file.name); const uploadTask = storageRef.put(file);
 
-function loadFiles() {
-  const listRef = storage.ref('uploads/');
-  const fileList = document.getElementById("fileList");
-  fileList.innerHTML = "";
+uploadTask.on( "state_changed", function (snapshot) { const percent = (snapshot.bytesTransferred / snapshot.totalBytes) * 100; uploadStatus.innerText = Upload is ${percent.toFixed(2)}% done; }, function (error) { alert("Error uploading file: " + error.message); }, function () { alert("File uploaded successfully!"); fileInput.value = ""; uploadStatus.innerText = ""; } ); }
 
-  listRef.listAll().then(res => {
-    res.items.forEach(itemRef => {
-      itemRef.getDownloadURL().then(url => {
-        const li = document.createElement("li");
-        li.innerHTML = `<a href="${url}" target="_blank">${itemRef.name}</a>`;
-        fileList.appendChild(li);
-      });
-    });
-  });
-}
-
-window.onload = loadFiles;
