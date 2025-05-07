@@ -1,43 +1,41 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #0d0d0d;
+  background: #0b0f10;
   font-family: 'Share Tech Mono', monospace;
-  color: #00ff00;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  position: relative;
+  color: #00ff99;
 }
 
 main {
   width: 90%;
-  max-width: 400px;
+  max-width: 900px;
+  margin: auto;
+  padding-top: 60px;
 }
 
-.signup-box, .welcome-box, .admin-box {
-  background-color: #000;
+.signup-box, .homepage, .admin-box {
+  background-color: #0e1214;
   padding: 20px;
-  border: 1px solid #00ff00;
+  border: 1px solid #00ff99;
   border-radius: 10px;
-  box-shadow: 0 0 15px #00ff00;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  box-shadow: 0 0 15px #00ff99;
+  margin-bottom: 20px;
 }
 
 input {
   background-color: #0d0d0d;
-  border: 1px solid #00ff00;
+  border: 1px solid #00ff99;
   padding: 10px;
-  color: #00ff00;
+  color: #00ff99;
   font-size: 16px;
   border-radius: 5px;
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 button {
-  background-color: #00ff00;
+  background-color: #00ff99;
   color: #000;
   padding: 10px;
   font-weight: bold;
@@ -46,19 +44,49 @@ button {
   cursor: pointer;
 }
 
-#secretBtn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #00ff00;
-  font-size: 20px;
-  cursor: pointer;
+header h1 {
+  font-size: 2em;
+  margin-bottom: 0;
 }
 
-.log-entry {
+header p {
+  font-size: 1em;
+  color: #ccc;
+}
+
+.videos {
+  margin-top: 20px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+video {
+  width: 100%;
+  border: 2px solid #00ff99;
+  border-radius: 5px;
+}
+
+.skills ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills li {
   background: #111;
-  padding: 8px;
+  border-left: 4px solid #00ff99;
+  padding: 10px;
   margin: 5px 0;
-  border-left: 4px solid #00ff00;
-  font-size: 14px;
+}
+
+#secretBtn {
+  position: fixed;
+  top: 10px;
+  right: 15px;
+  color: #00ff99;
+  font-size: 24px;
+  cursor: pointer;
 }
