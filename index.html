@@ -1,48 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lesslie Newbigin | Military Cyber Ops</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesslie Newbigin | Armed CyberOps</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js"></script>
 </head>
 <body>
-  <nav class="military-menu">
-    <h1>☰ MENU</h1>
-    <ul>
-      <li onclick="showSection('home')">Home</li>
-      <li onclick="showSection('profile')">Profile</li>
-      <li onclick="showSection('upload')">Upload</li>
-      <li onclick="showSection('files')">Files</li>
-    </ul>
-  </nav>
-
-  <main>
+  <div class="bg-overlay"></div>
+  <header>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <nav id="sidebarMenu">
+      <ul>
+        <li onclick="showSection('home')">Home</li>
+        <li onclick="showSection('profile')">Profile</li>
+        <li onclick="showSection('upload')">Upload</li>
+        <li onclick="showSection('files')">Files</li>
+      </ul>
+    </nav>
+  </header>  <main>
     <section id="home" class="page-section active">
-      <h2>Welcome, Lesslie Newbigin</h2>
-      <p>Cybersecurity Analyst – Military Operations</p>
-    </section>
+      <h1>Welcome, Lesslie Newbigin</h1>
+      <p>Cybersecurity Analyst - Military Intelligence Division</p>
+    </section><section id="profile" class="page-section">
+  <h1>Profile</h1>
+  <p>Experienced in digital defense, threat assessment, and cyber warfare protocols.</p>
+</section>
 
-    <section id="profile" class="page-section">
-      <h2>Profile</h2>
-      <p>Specialized in penetration testing, cyber warfare, and AI-integrated defense.</p>
-    </section>
+<section id="upload" class="page-section">
+  <h1>Upload Intelligence Files</h1>
+  <input type="file" id="fileInput" />
+  <button onclick="uploadFile()">Upload</button>
+  <p id="uploadStatus"></p>
+</section>
 
-    <section id="upload" class="page-section">
-      <h2>Upload Intel</h2>
-      <input type="file" id="fileInput" />
-      <button onclick="uploadFile()">Upload</button>
-      <p id="uploadStatus"></p>
-    </section>
+<section id="files" class="page-section">
+  <h1>Files Archive</h1>
+  <ul id="fileList"></ul>
+</section>
 
-    <section id="files" class="page-section">
-      <h2>Uploaded Files</h2>
-      <ul id="fileList"></ul>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
-</body>
+  </main>  <script src="script.js"></script></body>
 </html>
