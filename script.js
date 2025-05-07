@@ -4,9 +4,7 @@ let clickCount = 0;
 window.onload = () => {
   const user = JSON.parse(localStorage.getItem("userData"));
   if (user) {
-    document.getElementById("signupBox").style.display = "none";
-    document.getElementById("welcomeBox").style.display = "block";
-    document.getElementById("welcomeUser").textContent = user.username;
+    showHomepage(user.username);
   }
 };
 
@@ -17,14 +15,19 @@ function register() {
   const msg = document.getElementById("signupMsg");
 
   if (!username || !email || !password) {
-    msg.textContent = "All fields required.";
+    msg.textContent = "All fields are required.";
     return;
   }
 
   const userData = { username, email, password, timestamp: new Date().toLocaleString() };
   localStorage.setItem("userData", JSON.stringify(userData));
-  msg.textContent = "Registered successfully!";
-  setTimeout(() => location.reload(), 1000);
+  showHomepage(username);
+}
+
+function showHomepage(username) {
+  document.getElementById("signupBox").style.display = "none";
+  document.getElementById("homepage").style.display = "block";
+  document.getElementById("homepage").querySelector("header h1").textContent = username;
 }
 
 document.getElementById("secretBtn").addEventListener("click", () => {
@@ -38,6 +41,7 @@ document.getElementById("secretBtn").addEventListener("click", () => {
 function showAdminPanel() {
   const user = JSON.parse(localStorage.getItem("userData"));
   const log = document.getElementById("userLog");
+
   if (!user) {
     log.innerHTML = "<div class='log-entry'>No user data available</div>";
   } else {
