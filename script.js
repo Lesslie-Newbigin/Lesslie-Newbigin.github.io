@@ -1,56 +1,54 @@
-let clickCount = 0;
-
-// Load existing user if
-window.onload = () => {
-  const user = JSON.parse(localStorage.getItem("userData"));
-  if (user) {
-    showHomepage(user.username);
-  }
+// Firebase Config - Replace with your project info
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "SENDER_ID",
+  appId: "APP_ID"
 };
 
-function register() {
-  const username = document.getElementById("newUsername").value.trim();
-  const email = document.getElementById("newEmail").value.trim();
-  const password = document.getElementById("newPassword").value.trim();
-  const msg = document.getElementById("signupMsg");
+firebase.initializeApp(firebaseConfig);
+const storage = firebase.storage();
 
-  if (!username || !email || !password) {
-    msg.textContent = "All fields are required.";
+function showSection(id) {
+  document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function uploadFile() {
+  const file = document.getElementById("fileInput").files[0];
+  const status = document.getElementById("uploadStatus");
+
+  if (!file) {
+    status.textContent = "Please choose a file.";
     return;
   }
 
-  const userData = { username, email, password, timestamp: new Date().toLocaleString() };
-  localStorage.setItem("userData", JSON.stringify(userData));
-  showHomepage(username);
+  const storageRef = storage.ref('uploads/' + file.name);
+  storageRef.put(file).then(snapshot => {
+    status.textContent = `Uploaded: ${file.name}`;
+    loadFiles();
+  }).catch(err => {
+    status.textContent = "Upload failed.";
+    console.error(err);
+  });
 }
 
-function showHomepage(username) {
-  document.getElementById("signupBox").style.display = "none";
-  document.getElementById("homepage").style.display = "block";
-  document.getElementById("homepage").querySelector("header h1").textContent = username;
+function loadFiles() {
+  const listRef = storage.ref('uploads/');
+  const fileList = document.getElementById("fileList");
+  fileList.innerHTML = "";
+
+  listRef.listAll().then(res => {
+    res.items.forEach(itemRef => {
+      itemRef.getDownloadURL().then(url => {
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="${url}" target="_blank">${itemRef.name}</a>`;
+        fileList.appendChild(li);
+      });
+    });
+  });
 }
 
-document.getElementById("secretBtn").addEventListener("click", () => {
-  clickCount++;
-  if (clickCount === 5) {
-    showAdminPanel();
-    clickCount = 0;
-  }
-});
-
-function showAdminPanel() {
-  const user = JSON.parse(localStorage.getItem("userData"));
-  const log = document.getElementById("userLog");
-
-  if (!user) {
-    log.innerHTML = "<div class='log-entry'>No user data available</div>";
-  } else {
-    log.innerHTML = `
-      <div class='log-entry'>[USER] Username: ${user.username}</div>
-      <div class='log-entry'>[USER] Email: ${user.email}</div>
-      <div class='log-entry'>[USER] Password: ${user.password}</div>
-      <div class='log-entry'>[TIME] Created: ${user.timestamp}</div>
-    `;
-  }
-  document.getElementById("adminPanel").style.display = "block";
-}
+window.onload = loadFiles;
