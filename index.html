@@ -8,21 +8,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="login" id="loginBox">
-    <h1>Admin Login</h1>
-    <input type="text" id="username" placeholder="Username" />
-    <input type="password" id="password" placeholder="Password" />
-    <button onclick="login()">Login</button>
-    <p id="error"></p>
-  </div>
+  <main>
+    <!-- Login Panel -->
+    <section class="login" id="loginBox">
+      <h1>Admin Login</h1>
+      <input type="text" id="username" placeholder="Username" autocomplete="username" />
+      <input type="password" id="password" placeholder="Password" autocomplete="current-password" />
+      <button onclick="login()">Login</button>
+      <p id="error" class="error-message"></p>
+    </section>
 
-  <div class="dashboard" id="dashboard">
-    <h2>Welcome, Lesslie Newbigin</h2>
-    <div class="log">[SYSTEM] Access granted at 12:32:14</div>
-    <div class="log">[INFO] Monitoring user requests...</div>
-    <div class="log">[ALERT] Suspicious IP detected</div>
-    <div class="log">[SYSTEM] Log archive updated</div>
-  </div>
+    <!-- Dashboard Panel -->
+    <section class="dashboard" id="dashboard" style="display: none;">
+      <h2>Welcome, Lesslie Newbigin</h2>
+      <div class="log">[SYSTEM] Access granted at 12:32:14</div>
+      <div class="log">[INFO] Monitoring user requests...</div>
+      <div class="log">[ALERT] Suspicious IP detected</div>
+      <div class="log">[SYSTEM] Log archive updated</div>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
