@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Lesslie Newbigin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dashboard">
+  <nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Profile</a></li>
+      <li style="display: none;"><a href="#" id="uploadMenu">Upload Files</a></li>
+      <li><a href="#" id="secretHex">Secret</a></li>
+    </ul>
+  </nav>  <main>
+    <section class="welcome">
+      <h1>Welcome, Lesslie Newbigin</h1>
+      <p>Cybersecurity Analyst | AI Specialist | Certified Professional</p>
+    </section><section class="actions">
+  <h2>Upload Files</h2>
+  <input type="file" id="fileInput" />
+  <button onclick="uploadFile()">Upload</button>
+  <p id="uploadStatus"></p>
+</section>
+
+<section id="secretInfo" style="display:none; white-space: pre-line; color: yellow; background-color: rgba(0,0,0,0.7); padding: 1em; margin-top: 1em; border: 1px solid red;"></section>
+
+  </main>  <script src="script.js"></script></body>
+</html>
