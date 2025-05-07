@@ -1,96 +1,38 @@
-/* Reset and base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* style.css */
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
-}
+body { margin: 0; font-family: Arial, sans-serif; background: url('background.jpg') no-repeat center center fixed; background-size: cover; color: white; }
 
-.container {
-  width: 90%;
-  margin: auto;
-  overflow: hidden;
-}
+.navbar { background-color: black; color: yellow; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; }
 
-/* Navbar styles */
-.navbar {
-  background-color: #333;
-  color: #fff;
-  padding: 1rem 0;
-}
+.menu-toggle { font-size: 24px; cursor: pointer; }
 
-.navbar .logo {
-  float: left;
-  font-size: 1.5rem;
-  margin-left: 1rem;
-}
+.logo { font-weight: bold; font-size: 20px; }
 
-.navbar nav {
-  float: right;
-  margin-right: 1rem;
-}
+nav { display: none; }
 
-.navbar .nav-links {
-  list-style: none;
-}
+nav.active { display: block; }
 
-.navbar .nav-links li {
-  display: inline;
-  margin: 0 1rem;
-}
+.nav-links { list-style: none; padding: 0; margin: 0; }
 
-.navbar .nav-links a {
-  color: #fff;
-  text-decoration: none;
-}
+.nav-links li { margin: 10px 0; }
 
-/* Hero section */
-.hero {
-  background: url('background.jpg') no-repeat center center/cover;
-  color: #fff;
-  padding: 4rem 0;
-  text-align: center;
-}
+.nav-links a { color: red; text-decoration: none; font-weight: bold; }
 
-/* Profile section */
-.profile-section {
-  padding: 2rem 0;
-  background-color: #e2e2e2;
-}
+.hero { margin-top: 60px; padding: 100px 20px; background: rgba(0, 0, 0, 0.6); text-align: center; }
 
-/* Upload section */
-.upload-section {
-  padding: 2rem 0;
-}
+.container { padding: 20px; background: rgba(0, 0, 0, 0.7); margin: 20px; border-radius: 8px; box-shadow: 0 0 15px blue; }
 
-.upload-section input[type="file"] {
-  margin-right: 1rem;
-}
+h2, h3 { color: yellow; }
 
-.upload-section button {
-  padding: 0.5rem 1rem;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
+input, button { display: block; width: 100%; padding: 10px; margin: 10px 0; border: none; border-radius: 4px; }
 
-.upload-section #uploadStatus {
-  margin-top: 1rem;
-  color: green;
-}
+button { background-color: blue; color: white; cursor: pointer; font-weight: bold; }
 
-/* Footer */
-.footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
-}
+.secret-hex { width: 30px; height: 30px; background-color: red; clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); cursor: pointer; margin-left: auto; }
+
+.secret-info { white-space: pre-wrap; margin-top: 20px; padding: 10px; background-color: black; color: white; display: none; font-size: 14px; border: 1px solid yellow; }
+
+.footer { text-align: center; padding: 15px; background-color: black; color: yellow; position: relative; bottom: 0; width: 100%; }
+
+@media screen and (min-width: 600px) { nav { display: block !important; } .nav-links { display: flex; gap: 20px; } .nav-links li { margin: 0; } .menu-toggle { display: none; } }
+
