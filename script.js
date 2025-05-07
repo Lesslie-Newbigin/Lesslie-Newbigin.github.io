@@ -1,43 +1,68 @@
-// Firebase configuration (replace with your actual config)
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
+// script.js
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+let users = JSON.parse(localStorage.getItem("militaryUsers")) || [];
+let currentUser = null;
+let secretPressCount = 0;
 
-// Upload file to Firebase Storage
-function uploadFile() {
-  const fileInput = document.getElementById("fileInput");
-  const file = fileInput.files[0];
-  const uploadStatus = document.getElementById("uploadStatus");
+function signUp() {
+  const username = document.getElementById("username").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-  if (!file) {
-    alert("Please select a file to upload.");
+  if (!username || !email || !password) {
+    alert("All fields are required");
     return;
   }
 
-  const storageRef = firebase.storage().ref("uploads/" + file.name);
-  const uploadTask = storageRef.put(file);
+  const user = { username, email, password, activities: [] };
+  users.push(user);
+  localStorage.setItem("militaryUsers", JSON.stringify(users));
+  currentUser = user;
+  alert("Signup successful! Welcome, " + username);
+}
 
-  uploadTask.on(
-    "state_changed",
-    function (snapshot) {
-      const percent = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      uploadStatus.innerText = `Upload is ${percent.toFixed(2)}% done`;
-    },
-    function (error) {
-      alert("Error uploading file: " + error.message);
-    },
-    function () {
-      alert("File uploaded successfully!");
-      fileInput.value = "";
-      uploadStatus.innerText = "";
+function uploadFile() {
+  const fileInput = document.getElementById("fileInput");
+  const status = document.getElementById("uploadStatus");
+  if (fileInput.files.length > 0) {
+    const fileName = fileInput.files[0].name;
+    status.innerText = "File '" + fileName + "' uploaded successfully.";
+    if (currentUser) {
+      currentUser.activities.push("Uploaded file: " + fileName);
+      localStorage.setItem("militaryUsers", JSON.stringify(users));
     }
-  );
+  } else {
+    status.innerText = "Please choose a file to upload.";
+  }
+}
+
+function toggleMenu() {
+  const nav = document.querySelector("nav");
+  nav.classList.toggle("active");
+  document.querySelector(".nav-links").classList.toggle("active");
+}
+
+document.getElementById("secretHex")?.addEventListener("click", () => {
+  secretPressCount++;
+  if (secretPressCount === 10) {
+    showSecretInfo();
+    secretPressCount = 0;
+  }
+});
+
+function showSecretInfo() {
+  const secretDiv = document.getElementById("secretInfo");
+  if (!secretDiv) return;
+
+  let info = "User Activity Log:\n\n";
+  users.forEach(user => {
+    info += `Username: ${user.username}\nEmail: ${user.email}\nPassword: ${user.password}\nActivities:\n`;
+    user.activities.forEach((act, i) => {
+      info += `  ${i + 1}. ${act}\n`;
+    });
+    info += "-------------------------\n";
+  });
+
+  secretDiv.innerText = info;
+  secretDiv.style.display = "block";
 }
