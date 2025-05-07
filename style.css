@@ -1,38 +1,32 @@
 /* style.css */
 
-body { margin: 0; font-family: Arial, sans-serif; background: url('background.jpg') no-repeat center center fixed; background-size: cover; color: white; }
+body { margin: 0; font-family: 'Arial', sans-serif; background: url(images.jpeg) no-repeat center center fixed; background-size: cover; color: white; }
 
-.navbar { background-color: black; color: yellow; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; }
+nav { background-color: rgba(0, 0, 0, 0.9); padding: 10px; display: flex; align-items: center; }
 
-.menu-toggle { font-size: 24px; cursor: pointer; }
+.menu-toggle { font-size: 24px; cursor: pointer; color: yellow; margin-right: 20px; }
 
-.logo { font-weight: bold; font-size: 20px; }
+.nav-links { list-style: none; display: flex; gap: 20px; }
 
-nav { display: none; }
+.nav-links li a { color: cyan; text-decoration: none; font-weight: bold; }
 
-nav.active { display: block; }
+.nav-links li a:hover { color: red; }
 
-.nav-links { list-style: none; padding: 0; margin: 0; }
+.dashboard main { padding: 2rem; background-color: rgba(0, 0, 0, 0.75); margin: 1rem; border-radius: 10px; }
 
-.nav-links li { margin: 10px 0; }
+.welcome h1 { color: yellow; font-size: 2.5rem; }
 
-.nav-links a { color: red; text-decoration: none; font-weight: bold; }
+.welcome p { color: lightblue; font-size: 1.2rem; }
 
-.hero { margin-top: 60px; padding: 100px 20px; background: rgba(0, 0, 0, 0.6); text-align: center; }
+.actions h2 { color: orange; margin-top: 1rem; }
 
-.container { padding: 20px; background: rgba(0, 0, 0, 0.7); margin: 20px; border-radius: 8px; box-shadow: 0 0 15px blue; }
+input[type="file"] { margin: 10px 0; }
 
-h2, h3 { color: yellow; }
+button { background-color: red; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
 
-input, button { display: block; width: 100%; padding: 10px; margin: 10px 0; border: none; border-radius: 4px; }
+button:hover { background-color: darkred; }
 
-button { background-color: blue; color: white; cursor: pointer; font-weight: bold; }
+#uploadStatus { margin-top: 10px; color: lime; font-weight: bold; }
 
-.secret-hex { width: 30px; height: 30px; background-color: red; clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); cursor: pointer; margin-left: auto; }
-
-.secret-info { white-space: pre-wrap; margin-top: 20px; padding: 10px; background-color: black; color: white; display: none; font-size: 14px; border: 1px solid yellow; }
-
-.footer { text-align: center; padding: 15px; background-color: black; color: yellow; position: relative; bottom: 0; width: 100%; }
-
-@media screen and (min-width: 600px) { nav { display: block !important; } .nav-links { display: flex; gap: 20px; } .nav-links li { margin: 0; } .menu-toggle { display: none; } }
+#secretInfo { border: 2px dashed red; padding: 1rem; margin-top: 2rem; background-color: rgba(20, 20, 20, 0.9); color: yellow; }
 
