@@ -1,31 +1,36 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard - Lesslie Newbigin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hacker SignUp Panel</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
-<body class="dashboard">
-  <nav>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#">Profile</a></li>
-      <li style="display: none;"><a href="#" id="uploadMenu">Upload Files</a></li>
-      <li><a href="#" id="secretHex">Secret</a></li>
-    </ul>
-  </nav>  <main>
-    <section class="welcome">
-      <h1>Welcome, Lesslie Newbigin</h1>
-      <p>Cybersecurity Analyst | AI Specialist | Certified Professional</p>
-    </section><section class="actions">
-  <h2>Upload Files</h2>
-  <input type="file" id="fileInput" />
-  <button onclick="uploadFile()">Upload</button>
-  <p id="uploadStatus"></p>
-</section>
+<body>
+  <div id="secretBtn">•</div>
 
-<section id="secretInfo" style="display:none; white-space: pre-line; color: yellow; background-color: rgba(0,0,0,0.7); padding: 1em; margin-top: 1em; border: 1px solid red;"></section>
+  <main>
+    <section class="signup-box" id="signupBox">
+      <h1>Create Account</h1>
+      <input type="text" id="newUsername" placeholder="Username" />
+      <input type="email" id="newEmail" placeholder="Email" />
+      <input type="password" id="newPassword" placeholder="Password" />
+      <button onclick="register()">Sign Up</button>
+      <p id="signupMsg"></p>
+    </section>
 
-  </main>  <script src="script.js"></script></body>
+    <section class="welcome-box" id="welcomeBox" style="display: none;">
+      <h2>Welcome back, <span id="welcomeUser"></span></h2>
+      <p>[INFO] You are already registered.</p>
+    </section>
+
+    <section class="admin-box" id="adminPanel" style="display: none;">
+      <h2>ADMIN PANEL</h2>
+      <div id="userLog"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
 </html>
