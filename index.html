@@ -1,35 +1,33 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tech Teach Hi - Lesslie Newbigin</title>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <title>Hacker Admin Panel</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="logo">Tech Teach Hi</div>
-    <div class="menu">
-      <a onclick="location.reload()">Home</a>
-      <a onclick="signUp()">Sign Up</a>
-      <a onclick="myAccount()">My Account</a>
-      <a onclick="addUser()">Add New User</a>
-      <a onclick="adminLogin()">Admin Login</a>
-      <a onclick="contactUs()">Contact Us</a>
-    </div>
-    <input type="text" class="search-bar" placeholder="Search...">
-  </header>
-  <div class="top-left">
-    <div class="hex-account" id="accountHex">?</div>
-    <button class="add-btn" onclick="addProject()">+</button>
-    <button class="mode-toggle" onclick="toggleMode()">Toggle Mode</button>
-  </div>
-  <div class="scroll-bar"></div>
   <main>
-    <h1>Welcome to Tech Teach Hi</h1>
-    <p>Powered by Lesslie Newbigin | Cybersecurity Analyst</p>
-    <p>Explore, Learn, Secure — Join the hacker-inspired movement.</p>
+    <!-- Login Panel -->
+    <section class="login" id="loginBox">
+      <h1>Admin Login</h1>
+      <input type="text" id="username" placeholder="Username" autocomplete="username" />
+      <input type="password" id="password" placeholder="Password" autocomplete="current-password" />
+      <button onclick="login()">Login</button>
+      <p id="error" class="error-message"></p>
+    </section>
+
+    <!-- Dashboard Panel -->
+    <section class="dashboard" id="dashboard" style="display: none;">
+      <h2>Welcome, Lesslie Newbigin</h2>
+      <div class="log">[SYSTEM] Access granted at 12:32:14</div>
+      <div class="log">[INFO] Monitoring user requests...</div>
+      <div class="log">[ALERT] Suspicious IP detected</div>
+      <div class="log">[SYSTEM] Log archive updated</div>
+    </section>
   </main>
+
   <script src="script.js"></script>
 </body>
 </html>
