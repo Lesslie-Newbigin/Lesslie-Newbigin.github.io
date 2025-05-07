@@ -3,33 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hacker SignUp Panel</title>
+  <title>Lesslie Newbigin | Cybersecurity Analyst</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="secretBtn">•</div>
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo">Lesslie Newbigin</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="#upload">Upload Files</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <main>
-    <section class="signup-box" id="signupBox">
-      <h1>Create Account</h1>
-      <input type="text" id="newUsername" placeholder="Username" />
-      <input type="email" id="newEmail" placeholder="Email" />
-      <input type="password" id="newPassword" placeholder="Password" />
-      <button onclick="register()">Sign Up</button>
-      <p id="signupMsg"></p>
-    </section>
+  <section id="home" class="hero">
+    <div class="container">
+      <h2>Welcome to My Professional Page</h2>
+      <p>Cybersecurity Analyst with a focus on ethical hacking and digital forensics.</p>
+    </div>
+  </section>
 
-    <section class="welcome-box" id="welcomeBox" style="display: none;">
-      <h2>Welcome back, <span id="welcomeUser"></span></h2>
-      <p>[INFO] You are already registered.</p>
-    </section>
+  <section id="profile" class="profile-section">
+    <div class="container">
+      <h2>Profile</h2>
+      <p>Experienced in cybersecurity protocols, threat analysis, and system penetration testing.</p>
+    </div>
+  </section>
 
-    <section class="admin-box" id="adminPanel" style="display: none;">
-      <h2>ADMIN PANEL</h2>
-      <div id="userLog"></div>
-    </section>
-  </main>
+  <section id="upload" class="upload-section">
+    <div class="container">
+      <h2>Upload Files & Videos</h2>
+      <input type="file" id="fileInput" />
+      <button onclick="uploadFile()">Upload</button>
+      <div id="uploadStatus"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Lesslie Newbigin. All rights reserved.</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
