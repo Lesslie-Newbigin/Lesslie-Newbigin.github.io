@@ -3,52 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lesslie Newbigin | Cybersecurity analyst</title>
+  <title>Lesslie Newbigin | Military Cyber Ops</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js"></script>
 </head>
 <body>
-  <div id="secretBtn">•••</div>
+  <nav class="military-menu">
+    <h1>☰ MENU</h1>
+    <ul>
+      <li onclick="showSection('home')">Home</li>
+      <li onclick="showSection('profile')">Profile</li>
+      <li onclick="showSection('upload')">Upload</li>
+      <li onclick="showSection('files')">Files</li>
+    </ul>
+  </nav>
 
   <main>
-    <section class="signup-box" id="signupBox">
-      <h1>Create Account</h1>
-      <input type="text" id="newUsername" placeholder="Username" />
-      <input type="email" id="newEmail" placeholder="Email" />
-      <input type="password" id="newPassword" placeholder="Password" />
-      <button onclick="register()">Sign Up</button>
-      <p id="signupMsg"></p>
+    <section id="home" class="page-section active">
+      <h2>Welcome, Lesslie Newbigin</h2>
+      <p>Cybersecurity Analyst – Military Operations</p>
     </section>
 
-    <section class="homepage" id="homepage" style="display: none;">
-      <header>
-        <h1>Lesslie Newbigin</h1>
-        <p>Cybersecurity Analyst & AI Specialist</p>
-      </header>
-
-      <section class="videos">
-        <h2>Featured Videos</h2>
-        <div class="video-grid">
-          <video controls src="your-video1.mp4"></video>
-          <video controls src="your-video2.mp4"></video>
-          <!-- Add more videos -->
-        </div>
-      </section>
-
-      <section class="skills">
-        <h2>Expertise</h2>
-        <ul>
-          <li>Penetration Testing</li>
-          <li>Network Security</li>
-          <li>AI in Cyber Defense</li>
-          <li>Ethical Hacking</li>
-        </ul>
-      </section>
+    <section id="profile" class="page-section">
+      <h2>Profile</h2>
+      <p>Specialized in penetration testing, cyber warfare, and AI-integrated defense.</p>
     </section>
 
-    <section class="admin-box" id="adminPanel" style="display: none;">
-      <h2>ADMIN PANEL</h2>
-      <div id="userLog"></div>
+    <section id="upload" class="page-section">
+      <h2>Upload Intel</h2>
+      <input type="file" id="fileInput" />
+      <button onclick="uploadFile()">Upload</button>
+      <p id="uploadStatus"></p>
+    </section>
+
+    <section id="files" class="page-section">
+      <h2>Uploaded Files</h2>
+      <ul id="fileList"></ul>
     </section>
   </main>
 
