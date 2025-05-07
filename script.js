@@ -3,7 +3,7 @@ function login() {
   const password = document.getElementById("password").value.trim();
   const error = document.getElementById("error");
 
-  if (username === "lesslie Newbigin" && password === "2aug0088l") {
+  if (username === "Lesslie Newbigin" && password === "2aug0088l") {
     document.getElementById("loginBox").style.display = "none";
     document.getElementById("dashboard").style.display = "block";
     error.textContent = "";
