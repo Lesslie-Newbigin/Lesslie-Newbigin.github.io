@@ -1,53 +1,16 @@
-document.querySelectorAll('nav a').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href').substring(1);
-    const target = document.getElementById(targetId);
-    if (target) {
-      window.scrollTo({
-        top: target.offsetTop - 60,
-        behavior: 'smooth'
-      });
-    }
-  });
-});
+// Reveal sections on scroll
+const sections = document.querySelectorAll("section");
 
-window.addEventListener('scroll', () => {
-  const scrollPos = window.scrollY + 100;
-  document.querySelectorAll('nav a').forEach(link => {
-    const section = document.querySelector(link.getAttribute('href'));
-    if (
-      section.offsetTop <= scrollPos &&
-      section.offsetTop + section.offsetHeight > scrollPos
-    ) {
-      link.style.color = '#ffcc00';
+const revealOnScroll = () => {
+  const triggerBottom = window.innerHeight / 1.2;
+  sections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+    if (sectionTop < triggerBottom) {
+      section.classList.add("visible");
     } else {
-      link.style.color = '#ffffff';
+      section.classList.remove("visible");
     }
   });
-});
+};
 
-const headerTitle = document.querySelector('header h1');
-if (headerTitle) {
-  let hue = 0;
-  setInterval(() => {
-    headerTitle.style.color = `hsl(${hue}, 100%, 70%)`;
-    hue = (hue + 2) % 360;
-  }, 100);
-}
-
-const sections = document.querySelectorAll('section');
-const options = { threshold: 0.1 };
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, options);
-
-sections.forEach(section => {
-  section.classList.add('hidden');
-  observer.observe(section);
-});
+window.addEventListener("scroll", revealOnScroll);
