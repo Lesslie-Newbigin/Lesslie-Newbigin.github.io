@@ -2,30 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lesslie Newbigin | Cybersecurity Analyst</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lesslie Newbigin - Cybersecurity Analyst</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Add Certificate Button -->
+  <button id="addCertBtn">+</button>
 
+  <!-- Upload Certificate Modal -->
+  <div id="uploadModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Upload Certificate</h2>
+      <form id="certUploadForm">
+        <input type="text" id="certTitle" placeholder="Certificate Title" required />
+        <input type="file" id="certFile" accept=".pdf,.jpg,.jpeg,.png" required />
+        <button type="submit">Add Certificate</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Header -->
   <header>
     <img src="logo.png" alt="Logo" class="logo" />
     <h1>Lesslie Newbigin</h1>
     <p>Cybersecurity Analyst | AI Specialist | Technologist</p>
   </header>
 
+  <!-- Navigation -->
   <nav>
     <a href="#about">About</a>
     <a href="#expertise">Expertise</a>
-    <a href="#certificates">Certificates</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#vision">Mission</a>
+    <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- Main Content -->
   <main>
     <section id="about">
       <h2>About Me</h2>
       <p>
-        I am Lesslie Newbigin, a certified cybersecurity analyst and AI specialist with a passion for technology, security, and ethical innovation.
+        I am Lesslie Newbigin, a certified cybersecurity analyst and artificial
+        intelligence specialist. I bring analytical precision, strategic thinking, and
+        cutting-edge skills to solve real-world tech challenges.
       </p>
     </section>
 
@@ -33,51 +55,48 @@
       <h2>Professional Expertise</h2>
       <ul>
         <li>Cybersecurity & Digital Forensics</li>
-        <li>Artificial Intelligence & Machine Learning</li>
-        <li>Web & App Security Architecture</li>
+        <li>AI & Machine Learning</li>
+        <li>Secure Web & App Architecture</li>
       </ul>
     </section>
 
-    <section id="certificates">
+    <section id="certifications">
+      <h2>Certifications & Achievements</h2>
+      <ul>
+        <li>Certified Ethical Hacker & Penetration Tester</li>
+        <li>Certified AI Developer</li>
+        <li>Contributor to Open-Source Security Frameworks</li>
+        <li>Speaker at Cybersecurity Workshops</li>
+      </ul>
+    </section>
+
+    <section id="vision">
+      <h2>Mission & Vision</h2>
+      <p><strong>Mission:</strong> To defend digital integrity in a world where data is the new currency.</p>
+      <p><strong>Vision:</strong> A secure, smart, and sovereign internet for all.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Current Focus</h2>
+      <ul>
+        <li>Building professional-grade, secure websites</li>
+        <li>Designing identity and file management systems</li>
+        <li>Creating learning platforms for real-world security projects</li>
+      </ul>
+    </section>
+
+    <section id="certList">
       <h2>Uploaded Certificates</h2>
-
-      <!-- Filter Buttons -->
-      <div id="certFilters">
-        <button onclick="filterCerts('all')">All</button>
-        <button onclick="filterCerts('Cybersecurity')">Cybersecurity</button>
-        <button onclick="filterCerts('AI')">AI</button>
-        <button onclick="filterCerts('Cloud')">Cloud</button>
-      </div>
-
-      <!-- Certificates List -->
-      <div id="certList"></div>
+      <!-- Certificates will appear here -->
     </section>
 
     <section id="contact">
       <h2>Contact Me</h2>
-      <p>Email: <a href="mailto:lessliehkrl@gmail.com">lessliehkrl@gmail.com</a></p>
-      <p>Phone: <a href="tel:+919150720183">+91 91507 20183</a></p>
-      <p>Instagram: <a href="https://instagram.com/itzz_lee_offcl" target="_blank">@itzz_lee_offcl</a></p>
+      <p>Email: lessliehkrl@gmail.com</p>
+      <p>Phone: +91 9150720183</p>
+      <p>Instagram: <a href="https://instagram.com/itzz_lee_offcl">@itzz_lee_offcl</a></p>
     </section>
   </main>
-
-  <!-- Upload Button and Modal -->
-  <button id="addCertBtn">+</button>
-
-  <div id="uploadModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <form id="certUploadForm">
-        <label for="certTitle">Certificate Title:</label>
-        <input type="text" id="certTitle" name="certTitle" required />
-
-        <label for="certFile">Upload File (Image or PDF):</label>
-        <input type="file" id="certFile" name="certFile" accept=".jpg,.png,.jpeg,.pdf" required />
-
-        <button type="submit">Upload Certificate</button>
-      </form>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>
