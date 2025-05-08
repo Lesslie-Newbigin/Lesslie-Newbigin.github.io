@@ -1,186 +1,215 @@
-/* style.css */
-
-body {
+/* General Reset */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0d0d0d;
-  color: #e6e6e6;
-  line-height: 1.6;
 }
 
+body {
+  background-color: #0b0b0b;
+  color: #ffffff;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Header */
 header {
-  background-color: #111;
-  color: red;
   text-align: center;
-  padding: 40px 20px;
-  border-bottom: 5px solid #ff0000;
+  padding: 40px 20px 20px;
+  background-color: #111;
+  border-bottom: 3px solid red;
 }
 
 .logo {
-  width: 100px;
-  height: auto;
-  margin-bottom: 15px;
+  max-width: 100px;
+  margin-bottom: 10px;
 }
 
-h1 {
-  font-size: 36px;
-  margin: 10px 0;
+header h1 {
+  font-size: 2.5rem;
   color: red;
-  text-transform: uppercase;
 }
 
-p {
-  font-size: 18px;
-  margin: 5px 0;
-  color: white;
+header p {
+  color: #ccc;
+  font-size: 1rem;
 }
 
+/* Navigation */
 nav {
-  background-color: #222;
   text-align: center;
-  padding: 15px 0;
-  box-shadow: 0 2px 10px #000;
+  background: #1a1a1a;
+  padding: 10px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid red;
 }
 
 nav a {
-  color: yellow;
-  margin: 0 20px;
+  color: white;
+  margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 16px;
 }
 
 nav a:hover {
   color: red;
 }
 
-main {
-  padding: 40px 20px;
-  background-color: #0a0a0a;
-}
-
+/* Sections */
 section {
-  margin-bottom: 50px;
-  padding: 20px;
-  border: 2px solid #444;
-  border-radius: 12px;
-  background-color: #1a1a1a;
+  padding: 30px 0;
+  border-bottom: 1px solid #222;
 }
 
-h2 {
-  font-size: 28px;
-  color: #00b7ff;
-  border-bottom: 2px solid red;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
+section h2 {
+  font-size: 1.8rem;
+  color: red;
+  margin-bottom: 15px;
+}
+
+section p, section ul {
+  color: #ccc;
+  font-size: 1.1rem;
 }
 
 ul {
-  list-style: square;
   padding-left: 20px;
-  color: #f0f0f0;
 }
 
-ul li {
+li {
   margin-bottom: 10px;
 }
 
-#contact a {
-  color: #ffa500;
-  text-decoration: none;
+/* Certificate Filters */
+#certFilters {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-#contact a:hover {
-  text-decoration: underline;
+#certFilters button {
+  background: #222;
+  color: white;
+  border: 1px solid red;
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-/* Add Certificate Button */
+#certFilters button:hover {
+  background: red;
+  color: black;
+}
+
+/* Certificate List */
+#certList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.cert-item {
+  background: #1a1a1a;
+  border: 2px solid red;
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+}
+
+.cert-item img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border: 2px solid white;
+  border-radius: 8px;
+}
+
+.cert-item iframe {
+  width: 100%;
+  height: 200px;
+  margin-top: 10px;
+  border: 2px solid white;
+  border-radius: 8px;
+}
+
+/* Upload Button */
 #addCertBtn {
   position: fixed;
   top: 20px;
   right: 20px;
-  font-size: 28px;
   background-color: red;
-  color: white;
+  color: black;
   border: none;
-  border-radius: 50%;
+  font-size: 2rem;
   width: 50px;
   height: 50px;
+  border-radius: 50%;
   cursor: pointer;
   z-index: 1000;
-  box-shadow: 0 0 15px red;
-  transition: background 0.3s;
 }
 
-#addCertBtn:hover {
-  background-color: #b30000;
-}
-
-/* Modal Styles */
+/* Modal Styling */
 .modal {
   display: none;
   position: fixed;
-  z-index: 999;
+  z-index: 1001;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(10, 10, 10, 0.9);
+  overflow: auto;
+  background-color: rgba(10, 10, 10, 0.95);
 }
 
 .modal-content {
   background-color: #111;
   margin: 10% auto;
   padding: 30px;
-  border-radius: 12px;
+  border: 2px solid red;
   width: 90%;
-  max-width: 400px;
-  box-shadow: 0 0 15px red;
+  max-width: 500px;
+  border-radius: 10px;
   color: white;
 }
 
-.modal-content input,
-.modal-content button {
+.close {
+  color: red;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="file"],
+button[type="submit"] {
+  display: block;
   width: 100%;
-  margin-top: 15px;
-  padding: 12px;
+  padding: 10px;
+  margin-top: 10px;
   background: #222;
-  border: 1px solid #555;
+  border: 1px solid red;
   color: white;
   border-radius: 5px;
 }
 
-.modal-content button {
-  background: red;
-  border: none;
+button[type="submit"] {
+  background-color: red;
+  color: black;
   font-weight: bold;
+  margin-top: 20px;
 }
 
-.modal-content button:hover {
-  background: darkred;
-}
-
-.close {
-  float: right;
-  font-size: 24px;
+button[type="submit"]:hover {
+  background-color: #ff1a1a;
   color: white;
-  cursor: pointer;
 }
 
-/* Certificate List */
-.cert-item {
-  background-color: #2a2a2a;
-  padding: 20px;
-  margin-top: 15px;
-  border-left: 5px solid red;
-  border-radius: 8px;
-}
-/* Smooth transitions */
-* {
-  transition: all 0.3s ease;
-}
-
-/* Scrollbar Styling for WebKit (Chrome, Edge, Safari) */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -195,19 +224,18 @@ ul li {
   background: #ff1a1a;
 }
 
-/* Subtle animation on sections */
-section {
-  animation: fadeInUp 1s ease both;
-}
-
-/* Keyframes for fadeInUp */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+/* Responsive */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  #certList {
+    grid-template-columns: 1fr;
   }
 }
