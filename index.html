@@ -14,18 +14,20 @@
         <p><span class="typed"></span></p>
       </div>
       <div class="hero-img">
-        <img src="your-photo.jpg" alt="Lesslie Newbigin" />
+        <img src="profile.jpg" alt="Lesslie Newbigin">
       </div>
     </div>
   </header>  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#expertise">Expertise</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#certificates">Certificates</a></li>
-      <li><a href="#portfolio">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="container">
+      <div class="menu-toggle">☰</div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </nav>  <section id="about">
     <div class="container">
       <h2>About Me</h2>
@@ -39,28 +41,21 @@
         <li>Artificial Intelligence & Machine Learning</li>
         <li>Web & App Security Architecture</li>
       </ul>
-    </div>
-  </section>  <section id="skills">
-    <div class="container">
-      <h2>Skills</h2>
       <div class="skills-icons">
-        <img src="icons/network.png" alt="Networking" />
-        <img src="icons/ai.png" alt="AI" />
-        <img src="icons/forensics.png" alt="Forensics" />
+        <img src="icons/security.png" alt="Cybersecurity">
+        <img src="icons/ai.png" alt="AI">
+        <img src="icons/web.png" alt="Web Security">
       </div>
     </div>
   </section>  <section id="certificates">
     <div class="container">
       <h2>Certificates</h2>
-      <!-- Certificate display code here -->
+      <!-- Insert certificate upload and display code here -->
     </div>
-  </section>  <section id="portfolio">
+  </section>  <section id="projects">
     <div class="container">
       <h2>Projects</h2>
-      <ul>
-        <li>Threat Detection System using AI</li>
-        <li>Secure Web App Penetration Testing Tool</li>
-      </ul>
+      <p>Coming soon: A showcase of cybersecurity tools and AI innovations developed by me.</p>
     </div>
   </section>  <section id="contact">
     <div class="container">
@@ -70,32 +65,12 @@
     </div>
   </section>  <footer>
     <div class="container">
-      <p>Connect: 
-        <a href="https://linkedin.com/in/yourprofile">LinkedIn</a> | 
-        <a href="https://github.com/yourprofile">GitHub</a>
-      </p>
       <p>Designed by Lesslie Newbigin &copy; 2025</p>
+      <p>
+        <a href="#">LinkedIn</a> |
+        <a href="#">GitHub</a> |
+        <a href="#">Twitter</a>
+      </p>
     </div>
-  </footer>  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var options = {
-        strings: ["Cybersecurity Analyst", "AI Specialist", "Technologist"],
-        typeSpeed: 50,
-        backSpeed: 30,
-        backDelay: 1500,
-        loop: true
-      };
-
-      new Typed(".typed", options);
-
-      document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-          });
-        });
-      });
-    });
-  </script></body>
+  </footer>  <script src="script.js"></script></body>
 </html>
