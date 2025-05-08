@@ -3,32 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lesslie Newbigin | Cybersecurity Analyst</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Lesslie Newbigin - Cybersecurity Analyst</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="Cyber Logo" class="logo-img">
+  <!-- Add Certificate Button -->
+  <button id="addCertBtn">+</button>
+
+  <!-- Upload Certificate Modal -->
+  <div id="uploadModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Upload Certificate</h2>
+      <form id="certUploadForm">
+        <input type="text" id="certTitle" placeholder="Certificate Title" required />
+        <input type="file" id="certFile" accept=".pdf,.jpg,.jpeg,.png" required />
+        <button type="submit">Add Certificate</button>
+      </form>
     </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <img src="logo.png" alt="Logo" class="logo" />
     <h1>Lesslie Newbigin</h1>
     <p>Cybersecurity Analyst | AI Specialist | Technologist</p>
   </header>
 
+  <!-- Navigation -->
   <nav>
     <a href="#about">About</a>
     <a href="#expertise">Expertise</a>
     <a href="#certifications">Certifications</a>
-    <a href="#mission">Mission</a>
+    <a href="#vision">Mission</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <main class="container">
+  <!-- Main Content -->
+  <main>
     <section id="about">
       <h2>About Me</h2>
-      <p>I am Lesslie Newbigin, a certified cybersecurity analyst and artificial intelligence specialist. I bring analytical precision, strategic thinking, and cutting-edge skills to solve real-world tech challenges.</p>
+      <p>
+        I am Lesslie Newbigin, a certified cybersecurity analyst and artificial
+        intelligence specialist. I bring analytical precision, strategic thinking, and
+        cutting-edge skills to solve real-world tech challenges.
+      </p>
     </section>
 
     <section id="expertise">
@@ -50,32 +70,33 @@
       </ul>
     </section>
 
-    <section id="mission">
+    <section id="vision">
       <h2>Mission & Vision</h2>
-      <p><strong>Mission:</strong> To protect digital integrity and innovate ethically.</p>
-      <p><strong>Vision:</strong> A secure, intelligent, and sovereign internet.</p>
-      <blockquote class="motto">"Security is not a product — it’s a mindset."</blockquote>
+      <p><strong>Mission:</strong> To defend digital integrity in a world where data is the new currency.</p>
+      <p><strong>Vision:</strong> A secure, smart, and sovereign internet for all.</p>
     </section>
 
     <section id="projects">
-      <h2>Live Projects</h2>
-      <p><strong>Project Alpha:</strong> <a href="#">Full-stack encrypted file manager</a> with 2FA and role-based access.</p>
-      <p><strong>SecureEdu:</strong> <a href="#">Learning platform</a> for ethical hacking simulations.</p>
+      <h2>Current Focus</h2>
+      <ul>
+        <li>Building professional-grade, secure websites</li>
+        <li>Designing identity and file management systems</li>
+        <li>Creating learning platforms for real-world security projects</li>
+      </ul>
+    </section>
+
+    <section id="certList">
+      <h2>Uploaded Certificates</h2>
+      <!-- Certificates will appear here -->
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Email: lessliehkrl@gmail.com</p>
+      <p>Phone: +91 9150720183</p>
+      <p>Instagram: <a href="https://instagram.com/itzz_lee_offcl">@itzz_lee_offcl</a></p>
     </section>
   </main>
-
-  <footer id="contact">
-    <h3>Contact Me</h3>
-    <form id="contactForm">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <p>Email: <a href="mailto:lessliehkrl@gmail.com">lessliehkrl@gmail.com</a></p>
-    <p>Phone: <a href="tel:+919150720183">+91 9150720183</a></p>
-    <p>Instagram: <a href="https://instagram.com/itzz_lee_offcl" target="_blank">@itzz_lee_offcl</a></p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
