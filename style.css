@@ -9,7 +9,7 @@ body { background-color: #111; color: #fff; line-height: 1.6; scroll-behavior: s
 
 header { padding: 80px 0; background: #222; }
 
-.hero { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+.hero { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 40px; }
 
 .hero-text { flex: 1; text-align: left; }
 
@@ -23,7 +23,11 @@ header p { font-size: 1.5rem; margin-top: 10px; color: #ccc; }
 
 nav { background: #1a1a1a; padding: 15px; position: sticky; top: 0; z-index: 1000; }
 
+.menu-toggle { display: none; color: red; font-size: 2rem; cursor: pointer; text-align: right; margin-bottom: 10px; }
+
 nav ul { display: flex; justify-content: center; list-style-type: none; flex-wrap: wrap; }
+
+nav ul.active { display: block; }
 
 nav a { color: #fff; margin: 0 20px; text-decoration: none; font-weight: bold; transition: color 0.3s; }
 
@@ -54,4 +58,14 @@ footer a { color: red; text-decoration: none; margin: 0 10px; transition: color 
 footer a:hover { color: #fff; }
 
 /* Typewriter Effect */ .typed { color: red; font-size: 1.5rem; font-weight: bold; }
+
+/* Responsive Design */ @media (max-width: 768px) { .hero { flex-direction: column; text-align: center; }
+
+.hero-text, .hero-img { text-align: center; }
+
+nav ul { display: none; flex-direction: column; gap: 15px; background: #1a1a1a; padding: 10px 0; border-top: 1px solid #333; }
+
+.menu-toggle { display: block; }
+
+nav ul.active { display: flex; } }
 
