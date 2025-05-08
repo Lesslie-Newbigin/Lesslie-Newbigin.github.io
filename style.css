@@ -175,3 +175,39 @@ ul li {
   border-left: 5px solid red;
   border-radius: 8px;
 }
+/* Smooth transitions */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Scrollbar Styling for WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #111;
+}
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff1a1a;
+}
+
+/* Subtle animation on sections */
+section {
+  animation: fadeInUp 1s ease both;
+}
+
+/* Keyframes for fadeInUp */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
