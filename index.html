@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,27 +14,29 @@
         <h1>Hi, I'm Lesslie Newbigin</h1>
         <p><span class="typed"></span></p>
       </div>
-      <div class="hero-img">
-        <img src="profile.jpg" alt="Lesslie Newbigin">
-      </div>
     </div>
-  </header>  <nav>
+  </header>
+
+  <nav>
     <div class="container">
       <div class="menu-toggle">☰</div>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#expertise">Expertise</a></li>
         <li><a href="#certificates">Certificates</a></li>
-        <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
-  </nav>  <section id="about">
+  </nav>
+
+  <section id="about">
     <div class="container">
       <h2>About Me</h2>
       <p>I am a certified cybersecurity analyst and AI specialist with a passion for technology and ethical innovation.</p>
     </div>
-  </section>  <section id="expertise">
+  </section>
+
+  <section id="expertise">
     <div class="container">
       <h2>Professional Expertise</h2>
       <ul>
@@ -41,36 +44,49 @@
         <li>Artificial Intelligence & Machine Learning</li>
         <li>Web & App Security Architecture</li>
       </ul>
-      <div class="skills-icons">
-        <img src="icons/security.png" alt="Cybersecurity">
-        <img src="icons/ai.png" alt="AI">
-        <img src="icons/web.png" alt="Web Security">
-      </div>
     </div>
-  </section>  <section id="certificates">
+  </section>
+
+  <section id="certificates">
     <div class="container">
       <h2>Certificates</h2>
-      <!-- Insert certificate upload and display code here -->
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header">Cybersecurity Essentials Certificate</button>
+          <div class="accordion-body">
+            <p>Issued by Cisco Networking Academy - Completed in 2024. Covered threat detection, mitigation strategies, and practical exercises.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">AI Foundations Specialization</button>
+          <div class="accordion-body">
+            <p>Issued by IBM on Coursera - Completed in 2024. Included Python, data handling, and neural network basics.</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>  <section id="projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <p>Coming soon: A showcase of cybersecurity tools and AI innovations developed by me.</p>
-    </div>
-  </section>  <section id="contact">
+  </section>
+
+  <section id="contact">
     <div class="container">
       <h2>Contact</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
       <p>Email: <a href="mailto:lessliehkrl@gmail.com">lessliehkrl@gmail.com</a></p>
       <p>Phone: <a href="tel:+919150720183">+91 91507 20183</a></p>
     </div>
-  </section>  <footer>
+  </section>
+
+  <footer>
     <div class="container">
       <p>Designed by Lesslie Newbigin &copy; 2025</p>
-      <p>
-        <a href="#">LinkedIn</a> |
-        <a href="#">GitHub</a> |
-        <a href="#">Twitter</a>
-      </p>
     </div>
-  </footer>  <script src="script.js"></script></body>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
