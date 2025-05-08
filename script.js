@@ -1,36 +1,14 @@
 // script.js
 
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contactForm");
+const addCertBtn = document.getElementById("addCertBtn"); const modal = document.getElementById("uploadModal"); const closeModal = document.querySelector(".close"); const form = document.getElementById("certUploadForm"); const certList = document.getElementById("certList");
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+// Open modal addCertBtn.onclick = () => { modal.style.display = "block"; };
 
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const message = form.message.value.trim();
+// Close modal closeModal.onclick = () => { modal.style.display = "none"; };
 
-    if (!name || !email || !message) {
-      alert("Please fill out all fields.");
-      return;
-    }
+// Close modal when clicking outside of it window.onclick = function(event) { if (event.target === modal) { modal.style.display = "none"; } };
 
-    alert("Message sent successfully!\nThank you, " + name + ".");
-    form.reset();
-  });
+// Handle certificate upload form.onsubmit = (e) => { e.preventDefault(); const title = document.getElementById("certTitle").value; const file = document.getElementById("certFile").files[0];
 
-  // Smooth scrolling for nav links
-  const links = document.querySelectorAll("nav a[href^='#']");
-  links.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
-      if (target) {
-        window.scrollTo({
-          top: target.offsetTop - 60,
-          behavior: "smooth",
-        });
-      }
-    });
-  });
-});
+if (title && file) { const certItem = document.createElement("div"); certItem.className = "cert-item"; certItem.innerHTML = <h3>${title}</h3> <p>File: ${file.name}</p>; certList.appendChild(certItem); modal.style.display = "none"; form.reset(); } else { alert("Please fill in all fields."); } };
+
