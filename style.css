@@ -35,4 +35,21 @@ footer h3 { font-size: 1.8rem; margin-bottom: 1.5rem; color: #ffcc00; /* Constan
 .contact-info a { color: #00ffff; text-decoration: none; font-weight: bold; }
 
 .contact-info a:hover { color: #ffcc00; }
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ffcc00; /* Constant color */
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #ffcc00; /* Constant color */
+}
+
+footer h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #ffcc00; /* Constant color */
+}
 
