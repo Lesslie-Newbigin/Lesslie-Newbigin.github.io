@@ -1,167 +1,92 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* style.css */
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.6;
   margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d0d0d;
+  color: #e6e6e6;
+  line-height: 1.6;
 }
 
-h1, h2 {
-  color: #2c3e50;
-}
-
-/* Header Styling */
 header {
-  background-color: #1d2d44;
-  color: white;
-  padding: 20px 0;
+  background-color: #111;
+  color: red;
   text-align: center;
+  padding: 40px 20px;
+  border-bottom: 5px solid #ff0000;
 }
 
-header .logo {
+.logo {
   width: 100px;
-  margin-bottom: 10px;
+  height: auto;
+  margin-bottom: 15px;
 }
 
-header h1 {
-  font-size: 2.5em;
+h1 {
+  font-size: 36px;
   margin: 10px 0;
-}
-
-header p {
-  font-size: 1.2em;
-  font-weight: lighter;
-}
-
-/* Navigation Menu Styling */
-nav {
-  background-color: #34495e;
-  padding: 10px;
-  text-align: center;
-}
-
-nav a {
-  color: white;
-  padding: 12px 20px;
-  text-decoration: none;
-  font-size: 1.2em;
+  color: red;
   text-transform: uppercase;
 }
 
+p {
+  font-size: 18px;
+  margin: 5px 0;
+  color: white;
+}
+
+nav {
+  background-color: #222;
+  text-align: center;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px #000;
+}
+
+nav a {
+  color: yellow;
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
 nav a:hover {
-  background-color: #1d2d44;
+  color: red;
 }
 
-/* Main Content Styling */
 main {
-  padding: 20px;
+  padding: 40px 20px;
+  background-color: #0a0a0a;
 }
 
-/* About Section */
-#about {
-  background-color: white;
+section {
+  margin-bottom: 50px;
+  padding: 20px;
+  border: 2px solid #444;
+  border-radius: 12px;
+  background-color: #1a1a1a;
+}
+
+h2 {
+  font-size: 28px;
+  color: #00b7ff;
+  border-bottom: 2px solid red;
+  padding-bottom: 10px;
   margin-bottom: 20px;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-#about h2 {
+ul {
+  list-style: square;
+  padding-left: 20px;
+  color: #f0f0f0;
+}
+
+ul li {
   margin-bottom: 10px;
 }
 
-/* Expertise Section */
-#expertise {
-  background-color: white;
-  margin-bottom: 20px;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-#expertise h2 {
-  margin-bottom: 15px;
-}
-
-#expertise ul {
-  list-style: none;
-}
-
-#expertise li {
-  margin: 5px 0;
-}
-
-/* Certificates Section */
-#certificates {
-  background-color: white;
-  margin-bottom: 20px;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-#certificates h2 {
-  margin-bottom: 15px;
-}
-
-#certFilters {
-  margin-bottom: 20px;
-}
-
-#certFilters button {
-  background-color: #1d2d44;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  cursor: pointer;
-  margin-right: 10px;
-  border-radius: 5px;
-}
-
-#certFilters button:hover {
-  background-color: #34495e;
-}
-
-#certList {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-#certList .certItem {
-  background-color: #ecf0f1;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-#certList .certItem img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-/* Contact Section */
-#contact {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-#contact h2 {
-  margin-bottom: 15px;
-}
-
 #contact a {
-  color: #1d2d44;
+  color: #ffa500;
   text-decoration: none;
 }
 
@@ -169,89 +94,84 @@ main {
   text-decoration: underline;
 }
 
-/* Modal Styling */
-#uploadModal {
+/* Add Certificate Button */
+#addCertBtn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 0 15px red;
+  transition: background 0.3s;
+}
+
+#addCertBtn:hover {
+  background-color: #b30000;
+}
+
+/* Modal Styles */
+.modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 999;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding-top: 100px;
+  background-color: rgba(10, 10, 10, 0.9);
 }
 
 .modal-content {
-  background-color: white;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 8px;
-  width: 50%;
-  max-width: 500px;
+  background-color: #111;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px red;
+  color: white;
 }
 
-.modal-content span.close {
-  color: #aaa;
-  font-size: 28px;
-  font-weight: bold;
-  position: absolute;
-  top: 10px;
-  right: 25px;
-}
-
-.modal-content span.close:hover,
-.modal-content span.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-form label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-
-form input[type="text"],
-form input[type="file"] {
+.modal-content input,
+.modal-content button {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
+  margin-top: 15px;
+  padding: 12px;
+  background: #222;
+  border: 1px solid #555;
+  color: white;
   border-radius: 5px;
 }
 
-form button {
-  background-color: #1d2d44;
-  color: white;
-  padding: 10px 15px;
+.modal-content button {
+  background: red;
   border: none;
-  border-radius: 5px;
+  font-weight: bold;
+}
+
+.modal-content button:hover {
+  background: darkred;
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  color: white;
   cursor: pointer;
 }
 
-form button:hover {
-  background-color: #34495e;
-}
-
-/* Add Certificate Button */
-#addCertBtn {
-  background-color: #1d2d44;
-  color: white;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 1.5em;
-  text-align: center;
-  line-height: 50px;
-  border: none;
-  cursor: pointer;
-}
-
-#addCertBtn:hover {
-  background-color: #34495e;
+/* Certificate List */
+.cert-item {
+  background-color: #2a2a2a;
+  padding: 20px;
+  margin-top: 15px;
+  border-left: 5px solid red;
+  border-radius: 8px;
 }
