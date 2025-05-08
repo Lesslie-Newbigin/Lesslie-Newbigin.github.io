@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,29 +8,30 @@
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1>Hi, I'm Lesslie Newbigin</h1>
-      <p><span class="typed"></span></p>
+    <div class="container hero">
+      <div class="hero-text">
+        <h1>Hi, I'm Lesslie Newbigin</h1>
+        <p><span class="typed"></span></p>
+      </div>
+      <div class="hero-img">
+        <img src="your-photo.jpg" alt="Lesslie Newbigin" />
+      </div>
     </div>
-  </header>
-
-  <nav>
+  </header>  <nav>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#portfolio">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-  </nav>
-
-  <section id="about">
+  </nav>  <section id="about">
     <div class="container">
       <h2>About Me</h2>
       <p>I am a certified cybersecurity analyst and AI specialist with a passion for technology and ethical innovation.</p>
     </div>
-  </section>
-
-  <section id="expertise">
+  </section>  <section id="expertise">
     <div class="container">
       <h2>Professional Expertise</h2>
       <ul>
@@ -40,29 +40,62 @@
         <li>Web & App Security Architecture</li>
       </ul>
     </div>
-  </section>
-
-  <section id="certificates">
+  </section>  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="skills-icons">
+        <img src="icons/network.png" alt="Networking" />
+        <img src="icons/ai.png" alt="AI" />
+        <img src="icons/forensics.png" alt="Forensics" />
+      </div>
+    </div>
+  </section>  <section id="certificates">
     <div class="container">
       <h2>Certificates</h2>
-      <!-- Insert certificate upload and display code here -->
+      <!-- Certificate display code here -->
     </div>
-  </section>
-
-  <section id="contact">
+  </section>  <section id="portfolio">
+    <div class="container">
+      <h2>Projects</h2>
+      <ul>
+        <li>Threat Detection System using AI</li>
+        <li>Secure Web App Penetration Testing Tool</li>
+      </ul>
+    </div>
+  </section>  <section id="contact">
     <div class="container">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:lessliehkrl@gmail.com">lessliehkrl@gmail.com</a></p>
       <p>Phone: <a href="tel:+919150720183">+91 91507 20183</a></p>
     </div>
-  </section>
-
-  <footer>
+  </section>  <footer>
     <div class="container">
+      <p>Connect: 
+        <a href="https://linkedin.com/in/yourprofile">LinkedIn</a> | 
+        <a href="https://github.com/yourprofile">GitHub</a>
+      </p>
       <p>Designed by Lesslie Newbigin &copy; 2025</p>
     </div>
-  </footer>
+  </footer>  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var options = {
+        strings: ["Cybersecurity Analyst", "AI Specialist", "Technologist"],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 1500,
+        loop: true
+      };
 
-  <script src="script.js"></script>
-</body>
+      new Typed(".typed", options);
+
+      document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+  </script></body>
 </html>
