@@ -1,16 +1,15 @@
-// Reveal sections on scroll
-const sections = document.querySelectorAll("section");
+// script.js
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-const revealOnScroll = () => {
-  const triggerBottom = window.innerHeight / 1.2;
-  sections.forEach(section => {
-    const sectionTop = section.getBoundingClientRect().top;
-    if (sectionTop < triggerBottom) {
-      section.classList.add("visible");
-    } else {
-      section.classList.remove("visible");
-    }
-  });
-};
+  const name = this.name.value.trim();
+  const email = this.email.value.trim();
+  const message = this.message.value.trim();
 
-window.addEventListener("scroll", revealOnScroll);
+  if (name && email && message) {
+    alert(`Thank you, ${name}! Your message has been received.`);
+    this.reset();
+  } else {
+    alert("Please fill in all fields.");
+  }
+});
