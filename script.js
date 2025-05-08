@@ -1,43 +1,6 @@
-// Firebase configuration (replace with your actual config)
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
+// script.js
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+// Smooth scroll for navigation links document.querySelectorAll('nav a').forEach(anchor => { anchor.addEventListener('click', function(e) { e.preventDefault(); const targetId = this.getAttribute('href').substring(1); const target = document.getElementById(targetId); if (target) { window.scrollTo({ top: target.offsetTop - 60, behavior: 'smooth' }); } }); });
 
-// Upload file to Firebase Storage
-function uploadFile() {
-  const fileInput = document.getElementById("fileInput");
-  const file = fileInput.files[0];
-  const uploadStatus = document.getElementById("uploadStatus");
+// Highlight active link while scrolling window.addEventListener('scroll', () => { const scrollPos = window.scrollY + 100; document.querySelectorAll('nav a').forEach(link => { const section = document.querySelector(link.getAttribute('href')); if ( section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos ) { link.style.color = 'yellow'; } else { link.style.color = 'white'; } }); });
 
-  if (!file) {
-    alert("Please select a file to upload.");
-    return;
-  }
-
-  const storageRef = firebase.storage().ref("uploads/" + file.name);
-  const uploadTask = storageRef.put(file);
-
-  uploadTask.on(
-    "state_changed",
-    function (snapshot) {
-      const percent = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      uploadStatus.innerText = `Upload is ${percent.toFixed(2)}% done`;
-    },
-    function (error) {
-      alert("Error uploading file: " + error.message);
-    },
-    function () {
-      alert("File uploaded successfully!");
-      fileInput.value = "";
-      uploadStatus.innerText = "";
-    }
-  );
-}
