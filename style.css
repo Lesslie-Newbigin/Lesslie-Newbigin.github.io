@@ -1,158 +1,213 @@
-/* styles.css */
+/* style.css */
 
 body {
-  font-family: 'Roboto', sans-serif;
   margin: 0;
-  padding: 0;
-  background: linear-gradient(to right, #000000, #111144);
-  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d0d0d;
+  color: #e6e6e6;
   line-height: 1.6;
 }
 
 header {
+  background-color: #111;
+  color: red;
   text-align: center;
-  padding: 4rem 2rem;
-  background: linear-gradient(to right, #1a0000, #4b0000);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  padding: 40px 20px;
+  border-bottom: 5px solid #ff0000;
 }
 
 .logo {
-  margin-bottom: 1rem;
+  width: 100px;
+  height: auto;
+  margin-bottom: 15px;
 }
 
-.logo-img {
-  height: 80px;
-  width: auto;
-  filter: drop-shadow(0 0 8px red);
+h1 {
+  font-size: 36px;
+  margin: 10px 0;
+  color: red;
+  text-transform: uppercase;
 }
 
-header h1 {
-  font-size: 3rem;
-  margin: 0.5rem 0;
-  color: #ff3333;
-}
-
-header p {
-  font-size: 1.4rem;
-  color: #ff6666;
+p {
+  font-size: 18px;
+  margin: 5px 0;
+  color: white;
 }
 
 nav {
-  background: #111;
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  background-color: #222;
+  text-align: center;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px #000;
 }
 
 nav a {
-  color: #fff;
+  color: yellow;
+  margin: 0 20px;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  background: #222;
-  border: 1px solid #555;
-  border-radius: 5px;
-  transition: background 0.3s ease, color 0.3s ease;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 nav a:hover {
-  background: #ff3333;
-  color: #fff000;
+  color: red;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
+main {
+  padding: 40px 20px;
+  background-color: #0a0a0a;
 }
 
 section {
-  margin-bottom: 4rem;
-  background: #1a1a1a;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 12px rgba(255, 0, 0, 0.3);
+  margin-bottom: 50px;
+  padding: 20px;
+  border: 2px solid #444;
+  border-radius: 12px;
+  background-color: #1a1a1a;
 }
 
-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 3px solid #ff3333;
-  padding-bottom: 0.5rem;
-  color: #ff3333;
+h2 {
+  font-size: 28px;
+  color: #00b7ff;
+  border-bottom: 2px solid red;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-section ul {
-  margin-left: 1.5rem;
+ul {
+  list-style: square;
+  padding-left: 20px;
+  color: #f0f0f0;
 }
 
-section ul li {
-  margin-bottom: 1rem;
-  border-left: 4px solid #ffcc00;
-  padding-left: 0.5rem;
+ul li {
+  margin-bottom: 10px;
 }
 
-blockquote.motto {
-  margin-top: 2rem;
-  padding: 1rem;
-  background: #000;
-  border-left: 5px solid #ff3333;
-  font-style: italic;
-  color: #00ffff;
-}
-
-footer {
-  background: #111;
-  padding: 3rem 2rem;
-  color: white;
-  text-align: center;
-  box-shadow: inset 0 2px 10px #000;
-}
-
-footer h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: #ffcc00;
-}
-
-footer a {
-  color: #00ffff;
+#contact a {
+  color: #ffa500;
   text-decoration: none;
-  font-weight: bold;
 }
 
-footer a:hover {
-  color: #ffcc00;
+#contact a:hover {
+  text-decoration: underline;
 }
 
-#contactForm {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 500px;
-  margin: 0 auto 2rem;
-}
-
-#contactForm input,
-#contactForm textarea {
-  padding: 0.75rem;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-#contactForm button {
-  padding: 0.75rem;
-  font-size: 1rem;
-  background: #ff3333;
+/* Add Certificate Button */
+#addCertBtn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  background-color: red;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 0 15px red;
   transition: background 0.3s;
 }
 
-#contactForm button:hover {
-  background: #cc0000;
+#addCertBtn:hover {
+  background-color: #b30000;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.9);
+}
+
+.modal-content {
+  background-color: #111;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px red;
+  color: white;
+}
+
+.modal-content input,
+.modal-content button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  background: #222;
+  border: 1px solid #555;
+  color: white;
+  border-radius: 5px;
+}
+
+.modal-content button {
+  background: red;
+  border: none;
+  font-weight: bold;
+}
+
+.modal-content button:hover {
+  background: darkred;
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Certificate List */
+.cert-item {
+  background-color: #2a2a2a;
+  padding: 20px;
+  margin-top: 15px;
+  border-left: 5px solid red;
+  border-radius: 8px;
+}
+/* Smooth transitions */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Scrollbar Styling for WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #111;
+}
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff1a1a;
+}
+
+/* Subtle animation on sections */
+section {
+  animation: fadeInUp 1s ease both;
+}
+
+/* Keyframes for fadeInUp */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
