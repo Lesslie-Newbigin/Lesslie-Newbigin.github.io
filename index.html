@@ -4,89 +4,217 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lesslie Newbigin | Cybersecurity Analyst</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #fdfdfd;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 85%;
+      margin: auto;
+      padding: 20px 0;
+    }
+
+    nav {
+      background: rgba(255, 255, 255, 0.9);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 10%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #007BFF;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #0056b3;
+    }
+
+    header {
+      background: linear-gradient(to bottom right, #ffffff, #e6f0ff);
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #007BFF;
+    }
+
+    .typed {
+      color: #333;
+      font-size: 1.5rem;
+    }
+
+    .hero-buttons {
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      margin: 10px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .download-btn {
+      background-color: #007BFF;
+      color: white;
+      border: 2px solid #007BFF;
+    }
+
+    .download-btn:hover {
+      background-color: white;
+      color: #007BFF;
+    }
+
+    .hire-btn {
+      background-color: white;
+      color: #007BFF;
+      border: 2px solid #007BFF;
+    }
+
+    .hire-btn:hover {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    section {
+      padding: 60px 0;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: #007BFF;
+      margin-bottom: 20px;
+    }
+
+    section p, section ul, section li {
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background: #f0f0f0;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      color: #007BFF;
+    }
+
+    .socials a:hover {
+      color: #0056b3;
+    }
+  </style>
 </head>
 <body>
+  <nav>
+    <div class="logo">Lesslie Newbigin</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <header>
-    <div class="container hero">
-      <div class="hero-text">
-        <h1>Hi, I'm Lesslie Newbigin</h1>
-        <p><span class="typed"></span></p>
+    <div class="container">
+      <h1>Hi, I'm Lesslie Newbigin</h1>
+      <p><span class="typed"></span></p>
+      <div class="hero-buttons">
+        <a href="https://1drv.ms/w/c/2336f87939c93b38/ERvYRDcXVE9GkrmIhugN-xcB8LhcrrA3oQJAMB-WXEbNvA" target="_blank" class="btn download-btn">Download CV</a>
+        <a href="#contact" class="btn hire-btn">Hire Me</a>
       </div>
     </div>
   </header>
 
-  <nav>
-    <div class="container">
-      <div class="menu-toggle">☰</div>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#expertise">Expertise</a></li>
-        <li><a href="#certificates">Certificates</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>I am a certified cybersecurity analyst and AI specialist with a passion for technology and ethical innovation.</p>
-    </div>
+  <section id="about" class="container">
+    <h2>About Me</h2>
+    <p>I am a certified cybersecurity analyst and AI specialist with a passion for technology and ethical innovation.</p>
   </section>
 
-  <section id="expertise">
-    <div class="container">
-      <h2>Professional Expertise</h2>
-      <ul>
-        <li>Cybersecurity & Digital Forensics</li>
-        <li>Artificial Intelligence & Machine Learning</li>
-        <li>Web & App Security Architecture</li>
-      </ul>
-    </div>
+  <section id="expertise" class="container">
+    <h2>Professional Expertise</h2>
+    <ul>
+      <li>Cybersecurity & Digital Forensics</li>
+      <li>Artificial Intelligence & Machine Learning</li>
+      <li>Web & App Security Architecture</li>
+    </ul>
   </section>
 
-  <section id="certificates">
-    <div class="container">
-      <h2>Certificates</h2>
-      <div class="accordion">
-        <div class="accordion-item">
-          <button class="accordion-header">Cybersecurity Essentials Certificate</button>
-          <div class="accordion-body">
-            <p>Issued by Cisco Networking Academy - Completed in 2024. Covered threat detection, mitigation strategies, and practical exercises.</p>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-header">AI Foundations Specialization</button>
-          <div class="accordion-body">
-            <p>Issued by IBM on Coursera - Completed in 2024. Included Python, data handling, and neural network basics.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <section id="certificates" class="container">
+    <h2>Certificates</h2>
+    <ul>
+      <li>Cybersecurity Essentials Certificate - Cisco, 2024</li>
+      <li>AI Foundations Specialization - IBM/Coursera, 2024</li>
+    </ul>
   </section>
 
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-      <p>Email: <a href="mailto:lessliehkrl@gmail.com">lessliehkrl@gmail.com</a></p>
-      <p>Phone: <a href="tel:+919150720183">+91 91507 20183</a></p>
-    </div>
+  <section id="contact" class="container">
+    <h2>Contact</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required><br><br>
+      <input type="email" placeholder="Your Email" required><br><br>
+      <textarea placeholder="Your Message" rows="5" required></textarea><br><br>
+      <button type="submit">Send Message</button>
+    </form>
+    <p>Email: <a href="mailto:lessliehkrl@gmail.com">lessliehkrl@gmail.com</a></p>
+    <p>Phone: <a href="tel:+919150720183">+91 91507 20183</a></p>
   </section>
 
   <footer>
-    <div class="container">
-      <p>Designed by Lesslie Newbigin &copy; 2025</p>
+    <p>Designed by Lesslie Newbigin &copy; 2025</p>
+    <div class="socials">
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      new Typed(".typed", {
+        strings: ["Cybersecurity Analyst", "AI Specialist", "Technologist"],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 1500,
+        loop: true
+      });
+    });
+  </script>
 </body>
 </html>
