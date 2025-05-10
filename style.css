@@ -280,3 +280,27 @@ footer .socials a:hover {
 .dark-theme form button:hover {
   background-color: #009c85;
 }
+
+.contact-header {
+  text-align: center;
+  padding: 100px 20px 60px;
+  background: linear-gradient(120deg, #ffebf0, #ffffff);
+}
+
+.contact-info {
+  margin-top: 20px;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.contact-info a {
+  color: #0077ff;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  color: #00c6a7;
+}
