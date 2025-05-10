@@ -23,5 +23,5 @@
 
 /* Footer */ footer { text-align: center; padding: 2rem; background: #0a0a0a; color: #777; border-top: 1px solid #1f1f1f; }
 
-/* Responsive */ @media (max-width: 768px) { .nav-links { flex-direction: column; gap: 1rem; display: none; / Could add mobile menu toggle */ } }
+/* Responsive */ @media (max-width: 768px) { .nav-links { flex-direction: column; gap: 1rem; display: none; /* Could add mobile menu toggle */ } }
 
