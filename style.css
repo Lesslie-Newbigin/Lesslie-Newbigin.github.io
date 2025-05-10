@@ -1,22 +1,27 @@
-/* Base */ body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #f5f5f5; scroll-behavior: smooth; }
+/* Reset & Base */
 
-h1, h2, p { margin: 0 0 20px; }
+{ margin: 0; padding: 0; box-sizing: border-box; } body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #e0e0e0; line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; } a { color: inherit; text-decoration: none; } ul { list-style: none; }
 
-section { padding: 60px 20px; max-width: 1000px; margin: auto; }
 
-/* Loader */ #loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; display: flex; justify-content: center; align-items: center; z-index: 9999; } .spinner { border: 5px solid #ccc; border-top: 5px solid gold; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; } @keyframes spin { to { transform: rotate(360deg); } }
+/* Loader */ #loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0a0a0a; display: flex; justify-content: center; align-items: center; z-index: 9999; } .spinner { width: 50px; height: 50px; border: 5px solid #333; border-top: 5px solid #f5c542; border-radius: 50%; animation: spin 1s linear infinite; } @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-/* Navbar */ .navbar { display: flex; justify-content: space-between; padding: 20px 40px; background: #111; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2); } .logo { font-size: 1.5rem; font-weight: 800; color: gold; } .nav-links { list-style: none; display: flex; gap: 20px; } .nav-links li a { color: #f5f5f5; text-decoration: none; transition: color 0.3s ease; } .nav-links li a:hover { color: gold; }
+/* Navbar */ .navbar { position: sticky; top: 0; background: #0a0a0a; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1f1f1f; z-index: 1000; } .navbar .logo { font-weight: 800; font-size: 1.5rem; color: #f5c542; } .nav-links { display: flex; gap: 2rem; } .nav-links li a:hover { color: #f5c542; }
 
-/* Hero Section */ .hero { height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(to right, #0a0a0a, #1a1a1a); text-align: center; } .typed-text { color: gold; } .cta-buttons { margin-top: 20px; display: flex; gap: 15px; justify-content: center; } .btn { padding: 10px 25px; background: gold; color: #000; border: none; border-radius: 5px; font-weight: 600; cursor: pointer; transition: background 0.3s ease; } .btn:hover { background: #e0b000; } .btn-outline { background: transparent; border: 2px solid gold; color: gold; } .btn-outline:hover { background: gold; color: #000; }
+/* Hero */ .hero { height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; background: linear-gradient(to bottom right, #0a0a0a, #1f1f1f); } .hero h1 { font-size: 3rem; margin-bottom: 1rem; } .hero .cta-buttons { margin-top: 2rem; display: flex; gap: 1rem; }
 
-/* Skills */ .skill-bar { background: #222; border-radius: 5px; margin: 10px 0; overflow: hidden; position: relative; } .skill-bar .progress { background: gold; height: 20px; transition: width 1s ease-in-out; }
+/* Buttons */ .btn { padding: 0.8rem 1.5rem; background: #f5c542; color: #0a0a0a; border: none; border-radius: 30px; cursor: pointer; font-weight: 600; transition: 0.3s; } .btn:hover { background: #ffd54f; } .btn-outline { background: transparent; border: 2px solid #f5c542; color: #f5c542; } .btn-outline:hover { background: #f5c542; color: #0a0a0a; }
 
-/* Cards */ .cert-grid, .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding-top: 20px; } .cert-card, .project-card { background: #1a1a1a; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(255, 215, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; } .cert-card:hover, .project-card:hover { transform: translateY(-5px); box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+/* Sections */ section { padding: 5rem 2rem; max-width: 1200px; margin: auto; } section h2 { font-size: 2rem; margin-bottom: 2rem; color: #f5c542; }
 
-/* Contact */ form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: auto; } form input, form textarea { padding: 10px; border: 1px solid #444; background: #0f0f0f; color: #f5f5f5; border-radius: 5px; } form button { align-self: flex-start; }
+/* Skill Bars */ .skill-bar { background: #1f1f1f; border-radius: 30px; overflow: hidden; margin-bottom: 1rem; } .skill-bar .progress { height: 20px; background: #f5c542; transition: width 1s ease; }
 
-/* Footer */ footer { text-align: center; padding: 20px; background: #111; color: #888; font-size: 0.9rem; }
+/* Certificates */ .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; } .cert-card { background: #1f1f1f; padding: 1.5rem; border-radius: 10px; text-align: center; transition: transform 0.3s ease; } .cert-card:hover { transform: scale(1.05); background: #2a2a2a; }
 
-/* Responsive */ @media (max-width: 768px) { .nav-links { flex-direction: column; background: #111; position: absolute; top: 60px; right: 0; width: 200px; display: none; } .nav-links.active { display: flex; } }
+/* Projects */ .project-card { background: #1f1f1f; padding: 1.5rem; margin-bottom: 1rem; border-radius: 10px; transition: transform 0.3s ease; } .project-card:hover { transform: scale(1.05); background: #2a2a2a; }
+
+/* Contact */ .contact form { display: flex; flex-direction: column; gap: 1rem; } .contact input, .contact textarea { padding: 0.8rem; border: none; border-radius: 10px; background: #1f1f1f; color: #e0e0e0; } .contact input:focus, .contact textarea:focus { outline: 2px solid #f5c542; }
+
+/* Footer */ footer { text-align: center; padding: 2rem; background: #0a0a0a; color: #777; border-top: 1px solid #1f1f1f; }
+
+/* Responsive / @media (max-width: 768px) { .nav-links { flex-direction: column; gap: 1rem; display: none; / Could add mobile menu toggle */ } }
 
