@@ -280,14 +280,3 @@ footer .socials a:hover {
 .dark-theme form button:hover {
   background-color: #009c85;
 }
-
-.reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.6s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
