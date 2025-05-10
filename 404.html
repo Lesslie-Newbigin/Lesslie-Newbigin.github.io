@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Under Construction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #e6f7ff;
+      color: #003366;
+      font-family: "Segoe UI", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.2em;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 2em;
+    }
+
+    .loader {
+      position: relative;
+      width: 120px;
+      height: 60px;
+      animation: move 2s linear infinite;
+    }
+
+    .truck {
+      width: 100px;
+      height: 60px;
+      background: #007acc;
+      border-radius: 10px 10px 0 0;
+      position: absolute;
+      bottom: 0;
+    }
+
+    .truck:before {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 20px;
+      background: #005f99;
+      top: -20px;
+      left: 10px;
+      border-radius: 5px;
+    }
+
+    .wheel {
+      width: 20px;
+      height: 20px;
+      background: #333;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -10px;
+    }
+
+    .wheel.left {
+      left: 10px;
+    }
+
+    .wheel.right {
+      right: 10px;
+    }
+
+    @keyframes move {
+      0% { transform: translateX(-100px); }
+      100% { transform: translateX(100vw); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Site Under Construction</h1>
+  <p>We’re paving the way to something great. Hang tight!</p>
+  
+  <div class="loader">
+    <div class="truck">
+      <div class="wheel left"></div>
+      <div class="wheel right"></div>
+    </div>
+  </div>
+</body>
+</html>
