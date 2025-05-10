@@ -2,85 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lesslie Newbigin | Cybersecurity Analyst</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <nav>
     <div class="logo">Lesslie Newbigin</div>
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#expertise">Expertise</a></li>
-      <li><a href="#certificates">Certificates</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="expertise.html">Expertise</a></li>
+      <li><a href="certificates.html">Certificates</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-  <header>
+
+  <header class="hero">
     <div class="container">
       <h1>Hi, I'm Lesslie Newbigin</h1>
       <p><span class="typed"></span></p>
       <div class="hero-buttons">
         <a href="https://1drv.ms/w/c/2336f87939c93b38/ERvYRDcXVE9GkrmIhugN-xcB8LhcrrA3oQJAMB-WXEbNvA" target="_blank" class="btn download-btn">Download CV</a>
-        <a href="#contact" class="btn hire-btn">Hire Me</a>
+        <a href="contact.html" class="btn hire-btn">Hire Me</a>
       </div>
     </div>
   </header>
-  <section id="about" class="container">
-    <h2>About Me</h2>
-    <p>I am a certified cybersecurity analyst and AI specialist with a passion for technology and ethical innovation.</p>
-  </section>
-  <section id="expertise" class="container">
-    <h2>Professional Expertise</h2>
-    <ul>
-      <li>Cybersecurity & Digital Forensics</li>
-      <li>Artificial Intelligence & Machine Learning</li>
-      <li>Web & App Security Architecture</li>
-    </ul>
-  </section>
-  <section id="certificates" class="container">
-    <h2>Certificates</h2>
-    <div class="cert-grid">
-      <div class="cert-card">
-        <h3>Data Science & Analytics</h3>
-        <p>HP LIFE — Mar 17, 2025</p>
-        <a href="/mnt/data/certificate (2) (1).pdf" target="_blank" class="cert-btn"><i class="fas fa-download"></i> View Certificate</a>
-      </div>
-      <div class="cert-card">
-        <h3>Business Email</h3>
-        <p>HP LIFE — Mar 21, 2025</p>
-        <a href="/mnt/data/certificate (2).pdf" target="_blank" class="cert-btn"><i class="fas fa-download"></i> View Certificate</a>
-      </div>
-      <div class="cert-card">
-        <h3>Cybersecurity Awareness</h3>
-        <p>HP LIFE — Mar 17, 2025</p>
-        <a href="/mnt/data/certificate (3).pdf" target="_blank" class="cert-btn"><i class="fas fa-download"></i> View Certificate</a>
-      </div>
-      <div class="cert-card">
-        <h3>Digital Productivity</h3>
-        <p>NIIT Foundation — Oct 23, 2024</p>
-        <a href="/mnt/data/Certificate_1371524_4_5i4xt.pdf" target="_blank" class="cert-btn"><i class="fas fa-download"></i> View Certificate</a>
-      </div>
-      <div class="cert-card">
-        <h3>Model HSS Moolanur</h3>
-        <p>P Lesslie New Begin — Oct 28, 2024</p>
-        <a href="/mnt/data/P Lesslie New begin_course_certificate.pdf" target="_blank" class="cert-btn"><i class="fas fa-download"></i> View Certificate</a>
-      </div>
-    </div>
-  </section>
-  <section id="contact" class="container">
-    <h2>Contact</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required><br><br>
-      <input type="email" placeholder="Your Email" required><br><br>
-      <textarea placeholder="Your Message" rows="5" required></textarea><br><br>
-      <button type="submit">Send Message</button>
-    </form>
-    <p>Email: <a href="mailto:lessliehkrl@gmail.com">lessliehkrl@gmail.com</a></p>
-    <p>Phone: <a href="tel:+919150720183">+91 91507 20183</a></p>
-  </section>
+
   <footer>
     <p>Designed by Lesslie Newbigin &copy; 2025</p>
     <div class="socials">
@@ -89,10 +38,18 @@
       <a href="#"><i class="fab fa-twitter"></i></a>
     </div>
   </footer>
-  <button id="back-to-top" title="Back to Top">↑</button>
-  <button id="theme-toggle" title="Toggle Theme">Toggle Theme</button>
 
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      new Typed(".typed", {
+        strings: ["Cybersecurity Analyst", "AI Specialist", "Technologist"],
+        typeSpeed: 60,
+        backSpeed: 40,
+        backDelay: 1500,
+        loop: true
+      });
+    });
+  </script>
 </body>
 </html>
