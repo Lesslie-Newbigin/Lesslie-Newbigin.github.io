@@ -9,6 +9,7 @@ body {
   background-color: #fefefe;
   color: #333;
   line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
 }
 
 nav {
@@ -135,7 +136,8 @@ section ul li::before {
   color: #00c6a7;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   width: 100%;
   padding: 15px;
   margin-bottom: 15px;
@@ -178,8 +180,6 @@ footer .socials a:hover {
   color: #00c6a7;
 }
 
-/* Certificate Cards */
-
 .cert-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -220,4 +220,63 @@ footer .socials a:hover {
 
 .cert-btn:hover {
   background-color: #005fcc;
+}
+
+#back-to-top,
+#theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+}
+
+#back-to-top {
+  right: 20px;
+}
+
+#theme-toggle {
+  right: 80px;
+}
+
+#back-to-top:hover,
+#theme-toggle:hover {
+  background-color: #005fcc;
+}
+
+.dark-theme {
+  background-color: #111;
+  color: #fefefe;
+}
+
+.dark-theme nav,
+.dark-theme footer,
+.dark-theme .cert-card {
+  background-color: #1b1b1b;
+  color: #fefefe;
+  border-color: #333;
+}
+
+.dark-theme nav ul li a,
+.dark-theme .cert-card h3 {
+  color: #00c6a7;
+}
+
+.dark-theme .cert-btn,
+.dark-theme .btn,
+.dark-theme form button {
+  background-color: #00c6a7;
+  color: white;
+}
+
+.dark-theme .cert-btn:hover,
+.dark-theme .btn:hover,
+.dark-theme form button:hover {
+  background-color: #009c85;
 }
