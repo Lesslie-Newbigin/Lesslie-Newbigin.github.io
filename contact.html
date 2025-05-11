@@ -1,63 +1,64 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Lesslie Newbigin</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Certificates | Lesslie Newbigin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">Lesslie</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="expertise.html">Skills</a></li>
-        <li><a href="certificates.html">Certificates</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-    </nav>
-  </header>  <main class="contact-page" data-aos="fade-up">
-    <section class="contact-hero">
-      <h1>Contact Me</h1>
-      <p>Let's collaborate or discuss security solutions.</p>
-    </section><section class="contact-form-section">
-  <form id="contactForm" class="styled-form" data-aos="fade-up">
-    <label for="name">Your Name</label>
-    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+  <nav>
+    <div class="logo">Lesslie Newbigin</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="expertise.html">Expertise</a></li>
+      <li><a href="certificates.html">Certificates</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-    <label for="email">Your Email</label>
-    <input type="email" id="email" name="email" placeholder="example@email.com" required>
+  <section id="certificates" class="container">
+    <h2>Certificates</h2>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <h3>Data Science & Analytics</h3>
+        <p>HP LIFE — Mar 17, 2025</p>
+        <a href="/mnt/data/certificate (2) (1).pdf" target="_blank" class="cert-btn"><i class="fas fa-download"></i> View Certificate</a>
+      </div>
+      <div class="cert-card">
+        <h3>Business Email</h3>
+        <p>HP LIFE — Mar 21, 2025</p>
+        <a href="/mnt/data/certificate (2).pdf" target="_blank" class="cert-btn"><i class="fas fa-download"></i> View Certificate</a>
+      </div>
+      <div class="cert-card">
+        <h3>Cybersecurity Awareness</h3>
+        <p>HP LIFE — Mar 17, 2025</p>
+        <a href="/mnt/data/certificate (3).pdf" target="_blank" class="cert-btn"><i class="fas fa-download"></i> View Certificate</a>
+      </div>
+      <div class="cert-card">
+        <h3>Digital Productivity</h3>
+        <p>NIIT Foundation — Oct 23, 2024</p>
+        <a href="/mnt/data/Certificate_1371524_4_5i4xt.pdf" target="_blank" class="cert-btn"><i class="fas fa-download"></i> View Certificate</a>
+      </div>
+      <div class="cert-card">
+        <h3>Model HSS Moolanur</h3>
+        <p>P Lesslie New Begin — Oct 28, 2024</p>
+        <a href="/mnt/data/P Lesslie New begin_course_certificate.pdf" target="_blank" class="cert-btn"><i class="fas fa-download"></i> View Certificate</a>
+      </div>
+    </div>
+  </section>
 
-    <label for="message">Your Message</label>
-    <textarea id="message" name="message" rows="6" placeholder="How can I help you?" required></textarea>
+  <footer>
+    <p>Designed by Lesslie Newbigin &copy; 2025</p>
+    <div class="socials">
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
 
-    <button type="submit" class="btn">Send Message</button>
-  </form>
-</section>
-
-<section class="contact-info" data-aos="fade-up">
-  <h2>Other Ways to Connect</h2>
-  <ul class="contact-methods">
-    <li>Email: <a href="mailto:lesslie@example.com">lesslie@example.com</a></li>
-    <li>GitHub: <a href="https://github.com/Lesslie-Newbigin" target="_blank">@Lesslie-Newbigin</a></li>
-    <li>LinkedIn: <a href="#">linkedin.com/in/lesslienewbigin</a></li>
-  </ul>
-</section>
-
-  </main>  <footer>
-    <p>© 2025 Lesslie Newbigin. All rights reserved.</p>
-  </footer>  <script>
-    AOS.init();
-
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      alert("Your message has been sent successfully!");
-      this.reset();
-    });
-  </script></body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</body>
 </html>
