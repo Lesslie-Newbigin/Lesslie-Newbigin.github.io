@@ -1,54 +1,166 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404 - Page Not Found</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Under Construction</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
-      color: #fff;
+      padding: 0;
+      background: #f0f8ff;
+      font-family: 'Segoe UI', sans-serif;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
       height: 100vh;
+      overflow: hidden;
+      color: #003366;
       text-align: center;
     }
-    .container {
-      max-width: 600px;
-    }
+
     h1 {
-      font-size: 6rem;
-      margin-bottom: 0.5em;
-      color: #f39c12;
+      font-size: 3em;
+      margin-bottom: 0.2em;
     }
+
     p {
-      font-size: 1.25rem;
+      font-size: 1.2em;
       margin-bottom: 2em;
     }
-    a.btn {
-      padding: 0.75em 2em;
-      background: #f39c12;
-      color: #000;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: 0.3s ease;
+
+    .scene {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
     }
-    a.btn:hover {
-      background: #fff;
-      color: #000;
+
+    /* Truck */
+    .truck {
+      position: absolute;
+      bottom: 20px;
+      width: 100px;
+      height: 50px;
+      background: #007acc;
+      border-radius: 10px;
+      animation: drive 6s linear infinite;
+    }
+
+    .truck::before {
+      content: "";
+      position: absolute;
+      top: -15px;
+      left: 10px;
+      width: 30px;
+      height: 20px;
+      background: #005f99;
+      border-radius: 5px;
+    }
+
+    .wheel {
+      position: absolute;
+      bottom: -10px;
+      width: 20px;
+      height: 20px;
+      background: #333;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    .wheel.left {
+      left: 10px;
+    }
+
+    .wheel.right {
+      right: 10px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes drive {
+      0% { left: -120px; }
+      100% { left: 110%; }
+    }
+
+    /* Excavator */
+    .excavator {
+      position: absolute;
+      bottom: 10px;
+      left: 20%;
+      width: 80px;
+      height: 40px;
+      background: #ffaa00;
+      border-radius: 5px;
+    }
+
+    .arm {
+      position: absolute;
+      top: -20px;
+      left: 40px;
+      width: 10px;
+      height: 30px;
+      background: #cc8800;
+      transform-origin: top center;
+      animation: dig 2s ease-in-out infinite;
+    }
+
+    .bucket {
+      position: absolute;
+      top: 30px;
+      left: -5px;
+      width: 20px;
+      height: 10px;
+      background: #cc8800;
+      border-radius: 5px;
+    }
+
+    @keyframes dig {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(-45deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    /* Barrier */
+    .barrier {
+      position: absolute;
+      bottom: 10px;
+      right: 10%;
+      width: 100px;
+      height: 20px;
+      background: repeating-linear-gradient(
+        45deg,
+        #ff3333,
+        #ff3333 10px,
+        white 10px,
+        white 20px
+      );
+      border: 3px solid #cc0000;
+      border-radius: 4px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>404</h1>
-    <p>The page you're looking for doesn't exist or has been moved.</p>
-    <a href="index.html" class="btn">Return Home</a>
+  <h1>Site Under Construction</h1>
+  <p>We're building something awesome. Please check back soon!</p>
+
+  <div class="scene">
+    <div class="truck">
+      <div class="wheel left"></div>
+      <div class="wheel right"></div>
+    </div>
+
+    <div class="excavator">
+      <div class="arm">
+        <div class="bucket"></div>
+      </div>
+    </div>
+
+    <div class="barrier"></div>
   </div>
 </body>
 </html>
