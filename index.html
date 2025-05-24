@@ -2,54 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lesslie Newbigin | Cybersecurity Analyst</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cybersecurity & AI Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
-<body>
-  <nav>
-    <div class="logo">Lesslie Newbigin</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="expertise.html">Expertise</a></li>
-      <li><a href="certificates.html">Certificates</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<body class="bg-white text-gray-800 font-sans scroll-smooth">
 
-  <header class="hero">
-    <div class="container">
-      <h1>Hi, I'm Lesslie Newbigin</h1>
-      <p><span class="typed"></span></p>
-      <div class="hero-buttons">
-        <a href="https://1drv.ms/w/c/2336f87939c93b38/ERvYRDcXVE9GkrmIhugN-xcB8LhcrrA3oQJAMB-WXEbNvA" target="_blank" class="btn download-btn">Download CV</a>
-        <a href="contact.html" class="btn hire-btn">Hire Me</a>
-      </div>
-    </div>
+  <!-- Navbar -->
+  <header class="shadow-md fixed w-full bg-white z-10">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-600">MyPortfolio</h1>
+      <ul class="flex space-x-6">
+        <li><a href="index.html" class="hover:text-blue-500">Home</a></li>
+        <li><a href="about.html" class="hover:text-blue-500">About</a></li>
+        <li><a href="projects.html" class="hover:text-blue-500">Projects</a></li>
+        <li><a href="contact.html" class="hover:text-blue-500">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <footer>
-    <p>Designed by Lesslie Newbigin &copy; 2025</p>
-    <div class="socials">
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-white text-center">
+    <div class="container mx-auto px-6" data-aos="fade-up">
+      <h2 class="text-4xl font-bold mb-4">Hi, I’m a Cybersecurity & AI Enthusiast</h2>
+      <p class="text-lg mb-6 max-w-2xl mx-auto">I build secure, intelligent systems using cutting-edge technologies. Explore my projects and skills.</p>
+      <a href="projects.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">View Projects</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-16 bg-white" id="features">
+    <div class="container mx-auto px-6">
+      <h3 class="text-3xl font-bold text-center mb-12" data-aos="fade-down">What I Do</h3>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="text-center p-6 shadow-lg rounded-xl" data-aos="zoom-in">
+          <h4 class="text-xl font-semibold mb-2 text-blue-600">Cybersecurity</h4>
+          <p>Penetration testing, vulnerability scanning, and secure architecture design.</p>
+        </div>
+        <div class="text-center p-6 shadow-lg rounded-xl" data-aos="zoom-in" data-aos-delay="100">
+          <h4 class="text-xl font-semibold mb-2 text-blue-600">AI/ML</h4>
+          <p>Building intelligent systems using Python, neural networks, and data analytics.</p>
+        </div>
+        <div class="text-center p-6 shadow-lg rounded-xl" data-aos="zoom-in" data-aos-delay="200">
+          <h4 class="text-xl font-semibold mb-2 text-blue-600">Web Dev</h4>
+          <p>Full-stack applications using HTML, Tailwind, Node.js, Flask, and MongoDB.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white py-6 mt-10">
+    <div class="container mx-auto text-center">
+      &copy; 2025 MyPortfolio. Built with passion.
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      new Typed(".typed", {
-        strings: ["Cybersecurity Analyst", "AI Specialist", "Technologist"],
-        typeSpeed: 60,
-        backSpeed: 40,
-        backDelay: 1500,
-        loop: true
-      });
-    });
+    AOS.init({ once: true });
   </script>
 </body>
 </html>
