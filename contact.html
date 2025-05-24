@@ -3,40 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact | Lesslie Newbigin</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <title>Contact - MyPortfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 </head>
-<body>
-  <nav>
-    <div class="logo">Lesslie Newbigin</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="expertise.html">Expertise</a></li>
-      <li><a href="certificates.html">Certificates</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<body class="bg-white text-gray-800 font-sans scroll-smooth">
 
-  <section id="contact" class="container">
-    <h2>Contact</h2>
-    <div class="contact-info">
-      <p><strong>Phone:</strong> <a href="tel:+919150720183">9150720183</a></p>
-      <p><strong>Email:</strong> <a href="mailto:lessliehkrl@gmail.com">lessliehkrl@gmail.com</a></p>
-      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/itzz_lee_official" target="_blank">@itzz_lee_official</a></p>
+  <header class="shadow-md fixed w-full bg-white z-10">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-600">MyPortfolio</h1>
+      <ul class="flex space-x-6">
+        <li><a href="index.html" class="hover:text-blue-500">Home</a></li>
+        <li><a href="about.html" class="hover:text-blue-500">About</a></li>
+        <li><a href="projects.html" class="hover:text-blue-500">Projects</a></li>
+        <li><a href="contact.html" class="text-blue-600 font-bold">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="pt-32 pb-20 bg-gray-50">
+    <div class="container mx-auto px-6 max-w-xl" data-aos="fade-up">
+      <h2 class="text-4xl font-bold mb-6">Contact Me</h2>
+      <form action="/contact" method="POST" class="space-y-4">
+        <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 border rounded-lg" />
+        <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 border rounded-lg" />
+        <textarea name="message" rows="5" placeholder="Your Message" required class="w-full p-3 border rounded-lg"></textarea>
+        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Send Message</button>
+      </form>
     </div>
   </section>
 
-  <footer>
-    <p>Designed by Lesslie Newbigin &copy; 2025</p>
-    <div class="socials">
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
+  <footer class="bg-blue-600 text-white py-6 mt-10">
+    <div class="container mx-auto text-center">
+      &copy; 2025 MyPortfolio. Built with passion.
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ once: true });</script>
 </body>
 </html>
