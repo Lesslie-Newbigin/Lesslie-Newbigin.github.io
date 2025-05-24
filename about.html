@@ -3,38 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About | Lesslie Newbigin</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <title>About - MyPortfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 </head>
-<body>
-  <nav>
-    <div class="logo">Lesslie Newbigin</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="expertise.html">Expertise</a></li>
-      <li><a href="certificates.html">Certificates</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<body class="bg-white text-gray-800 font-sans scroll-smooth">
 
-  <section class="container">
-    <h2>About Me</h2>
-    <p>I am Lesslie Newbigin, a certified cybersecurity analyst and AI specialist dedicated to creating secure, intelligent digital systems. My academic and practical experience bridges technology and security, aiming to deliver ethical and effective solutions.</p>
+  <header class="shadow-md fixed w-full bg-white z-10">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-600">MyPortfolio</h1>
+      <ul class="flex space-x-6">
+        <li><a href="index.html" class="hover:text-blue-500">Home</a></li>
+        <li><a href="about.html" class="text-blue-600 font-bold">About</a></li>
+        <li><a href="projects.html" class="hover:text-blue-500">Projects</a></li>
+        <li><a href="contact.html" class="hover:text-blue-500">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <p>I studied in a government school from 6th standard onwards, which helped shape my foundational values. My passion for ethical innovation drives my work in both cybersecurity and artificial intelligence.</p>
-
-    <p>I continually strive to learn and apply new technologies to improve digital safety and enable responsible AI-driven solutions across industries.</p>
+  <section class="pt-32 pb-20 bg-gray-50">
+    <div class="container mx-auto px-6 max-w-3xl" data-aos="fade-up">
+      <h2 class="text-4xl font-bold mb-6">About Me</h2>
+      <p class="text-lg leading-relaxed">I'm passionate about cybersecurity and artificial intelligence. I’ve been working with ethical hacking tools, Python-based AI frameworks, and web development stacks like Node.js and Flask. I believe in building secure, modern applications and always learning new things.</p>
+    </div>
   </section>
 
-  <footer>
-    <p>Designed by Lesslie Newbigin &copy; 2025</p>
-    <div class="socials">
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
+  <footer class="bg-blue-600 text-white py-6 mt-10">
+    <div class="container mx-auto text-center">
+      &copy; 2025 MyPortfolio. Built with passion.
     </div>
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ once: true });</script>
 </body>
 </html>
